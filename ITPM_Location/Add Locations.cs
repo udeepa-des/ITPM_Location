@@ -72,6 +72,9 @@ namespace ITPM_Location
             {
                 //Successfully inserted
                 MessageBox.Show("New Location Added.");
+
+                //clear if success
+                Clear();
             }
             else
             {
@@ -79,10 +82,21 @@ namespace ITPM_Location
                 MessageBox.Show("Failed to add new Location. Try Again");
             }
 
-            //to clear fields
-
-
         }
 
+        //to clear fields
+        public void Clear()
+        {
+            textBoxBuildingName.Text = "";
+            textBoxRoomName.Text = "";
+            radioButtonLecRoomType.Checked = false;
+            radioButtonLabRoomType.Checked = false;
+            textBoxCapacity.Text = "";
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

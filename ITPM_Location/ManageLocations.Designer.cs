@@ -34,15 +34,16 @@ namespace ITPM_Location
             this.labelCapacity = new System.Windows.Forms.Label();
             this.labelRoomType = new System.Windows.Forms.Label();
             this.labelRoomName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxBuildingNameML = new System.Windows.Forms.TextBox();
+            this.textBoxCapacityML = new System.Windows.Forms.TextBox();
+            this.textBoxRoomNameML = new System.Windows.Forms.TextBox();
             this.buttonMLupdate = new System.Windows.Forms.Button();
             this.buttonMLdelete = new System.Windows.Forms.Button();
             this.buttonMLclear = new System.Windows.Forms.Button();
             this.ML_RoomType_LecHall = new System.Windows.Forms.RadioButton();
             this.ML_RoomType_lab = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxID_ML = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,29 +98,30 @@ namespace ITPM_Location
             this.labelRoomName.Text = "Room Name";
             this.labelRoomName.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox1
+            // textBoxBuildingNameML
             // 
-            this.textBox1.Location = new System.Drawing.Point(337, 473);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(598, 22);
-            this.textBox1.TabIndex = 9;
+            this.textBoxBuildingNameML.Location = new System.Drawing.Point(337, 473);
+            this.textBoxBuildingNameML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxBuildingNameML.Name = "textBoxBuildingNameML";
+            this.textBoxBuildingNameML.Size = new System.Drawing.Size(598, 22);
+            this.textBoxBuildingNameML.TabIndex = 9;
+            this.textBoxBuildingNameML.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // textBoxCapacityML
             // 
-            this.textBox2.Location = new System.Drawing.Point(337, 665);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(598, 22);
-            this.textBox2.TabIndex = 10;
+            this.textBoxCapacityML.Location = new System.Drawing.Point(337, 665);
+            this.textBoxCapacityML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxCapacityML.Name = "textBoxCapacityML";
+            this.textBoxCapacityML.Size = new System.Drawing.Size(598, 22);
+            this.textBoxCapacityML.TabIndex = 10;
             // 
-            // textBox4
+            // textBoxRoomNameML
             // 
-            this.textBox4.Location = new System.Drawing.Point(337, 538);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(598, 22);
-            this.textBox4.TabIndex = 12;
+            this.textBoxRoomNameML.Location = new System.Drawing.Point(337, 538);
+            this.textBoxRoomNameML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRoomNameML.Name = "textBoxRoomNameML";
+            this.textBoxRoomNameML.Size = new System.Drawing.Size(598, 22);
+            this.textBoxRoomNameML.TabIndex = 12;
             // 
             // buttonMLupdate
             // 
@@ -134,6 +136,7 @@ namespace ITPM_Location
             this.buttonMLupdate.TabIndex = 13;
             this.buttonMLupdate.Text = "Update";
             this.buttonMLupdate.UseVisualStyleBackColor = false;
+            this.buttonMLupdate.Click += new System.EventHandler(this.buttonMLupdate_Click);
             // 
             // buttonMLdelete
             // 
@@ -148,6 +151,7 @@ namespace ITPM_Location
             this.buttonMLdelete.TabIndex = 14;
             this.buttonMLdelete.Text = "Delete";
             this.buttonMLdelete.UseVisualStyleBackColor = false;
+            this.buttonMLdelete.Click += new System.EventHandler(this.buttonMLdelete_Click);
             // 
             // buttonMLclear
             // 
@@ -163,6 +167,7 @@ namespace ITPM_Location
             this.buttonMLclear.TabIndex = 15;
             this.buttonMLclear.Text = "Clear";
             this.buttonMLclear.UseVisualStyleBackColor = false;
+            this.buttonMLclear.Click += new System.EventHandler(this.buttonMLclear_Click);
             // 
             // ML_RoomType_LecHall
             // 
@@ -186,6 +191,7 @@ namespace ITPM_Location
             this.ML_RoomType_lab.TabStop = true;
             this.ML_RoomType_lab.Text = "Laboratory";
             this.ML_RoomType_lab.UseVisualStyleBackColor = true;
+            this.ML_RoomType_lab.CheckedChanged += new System.EventHandler(this.ML_RoomType_lab_CheckedChanged);
             // 
             // dataGridView1
             // 
@@ -197,6 +203,16 @@ namespace ITPM_Location
             this.dataGridView1.Size = new System.Drawing.Size(736, 328);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // textBoxID_ML
+            // 
+            this.textBoxID_ML.Location = new System.Drawing.Point(337, 433);
+            this.textBoxID_ML.Name = "textBoxID_ML";
+            this.textBoxID_ML.ReadOnly = true;
+            this.textBoxID_ML.Size = new System.Drawing.Size(100, 22);
+            this.textBoxID_ML.TabIndex = 20;
+            this.textBoxID_ML.Visible = false;
             // 
             // ManageLocations
             // 
@@ -204,15 +220,16 @@ namespace ITPM_Location
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1086, 733);
+            this.Controls.Add(this.textBoxID_ML);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ML_RoomType_lab);
             this.Controls.Add(this.ML_RoomType_LecHall);
             this.Controls.Add(this.buttonMLclear);
             this.Controls.Add(this.buttonMLdelete);
             this.Controls.Add(this.buttonMLupdate);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxRoomNameML);
+            this.Controls.Add(this.textBoxCapacityML);
+            this.Controls.Add(this.textBoxBuildingNameML);
             this.Controls.Add(this.labelRoomName);
             this.Controls.Add(this.labelRoomType);
             this.Controls.Add(this.labelCapacity);
@@ -236,14 +253,15 @@ namespace ITPM_Location
         private System.Windows.Forms.Label labelCapacity;
         private System.Windows.Forms.Label labelRoomType;
         private System.Windows.Forms.Label labelRoomName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxBuildingNameML;
+        private System.Windows.Forms.TextBox textBoxCapacityML;
+        private System.Windows.Forms.TextBox textBoxRoomNameML;
         private System.Windows.Forms.Button buttonMLupdate;
         private System.Windows.Forms.Button buttonMLdelete;
         private System.Windows.Forms.Button buttonMLclear;
         private System.Windows.Forms.RadioButton ML_RoomType_LecHall;
         private System.Windows.Forms.RadioButton ML_RoomType_lab;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBoxID_ML;
     }
 }

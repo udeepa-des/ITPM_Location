@@ -76,7 +76,7 @@ namespace ITPM_Location
             // 
             // textBoxRoomName
             // 
-            this.textBoxRoomName.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textBoxRoomName.ForeColor = System.Drawing.Color.Black;
             this.textBoxRoomName.Location = new System.Drawing.Point(359, 253);
             this.textBoxRoomName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRoomName.Name = "textBoxRoomName";
@@ -163,6 +163,7 @@ namespace ITPM_Location
             this.buttonClear.TabIndex = 10;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonSave
             // 
