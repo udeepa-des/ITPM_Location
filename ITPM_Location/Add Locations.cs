@@ -75,11 +75,24 @@ namespace ITPM_Location
 
                 //clear if success
                 Clear();
+
             }
             else
             {
                 //Failed to Add Contact
                 MessageBox.Show("Failed to add new Location. Try Again");
+            }
+
+            //inserting data in to separate tables
+            bool successLab = c.InsertToLabTable(c);
+            bool successLec = c.InsertToLecTable(c);
+            if (successLab == true)
+            {
+                MessageBox.Show("Statistics Updated Successfully..");
+            }
+            else
+            {
+                MessageBox.Show("Failed To Update..");
             }
 
         }
@@ -97,6 +110,12 @@ namespace ITPM_Location
         private void buttonClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Statistics s = new Statistics();
+            s.Show();
         }
     }
 }

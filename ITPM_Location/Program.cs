@@ -17,7 +17,7 @@ namespace ITPM_Location
             //Application.SetHighDpiMode(HighDpiMode.systemaware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Statistics());
+            Application.Run(new AddLocation());
         }
     }
 }

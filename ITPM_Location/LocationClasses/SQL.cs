@@ -19,6 +19,11 @@ namespace ITPM_Location.LocationClasses
         public string RType { get; set; }
         public string Capacity { get; set; }
 
+        //StatChart Table
+        public int Lab { get; set; }
+        public int Lec { get; set; }
+
+
         static string myconnstring = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
         //Selecting data from DB
@@ -177,6 +182,185 @@ namespace ITPM_Location.LocationClasses
                 conn.Close();
             }
             return isSuccess;
+        }
+
+        public DataTable LabForChart()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT * FROM LabForStat";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            
+            return dt;
+        }
+        public DataTable LecHallForChart()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT * FROM LecHallForStat";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            return dt;
+        }
+
+        public bool InsertToLabTable(SQL c)
+        {
+            //create a default return type and set its default value to false
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //sql to update data in DB
+                string sql = "INSERT INTO LabForStat SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'La%'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                
+                //open DB connection
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        public bool InsertToLecTable(SQL c)
+        {
+            //create a default return type and set its default value to false
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //sql to update data in DB
+                string sql = "INSERT INTO LecHallForStat SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'Le%'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                
+                //open DB connection
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        public int GetNoOfRows()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT COUNT(ID) FROM Add_Location";
+
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count;
+        }
+
+        public int GetNoOfRowsOfLab()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT COUNT(Numbers) FROM LabForStat";
+
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count;
+        }
+        public int GetNoOfRowsofLecHall()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT COUNT(No) FROM LecHallForStat";
+
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count;
         }
     }
 }

@@ -29,9 +29,11 @@ namespace ITPM_Location
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxStat = new System.Windows.Forms.GroupBox();
             this.textBoxSubjectBoxStat = new System.Windows.Forms.TextBox();
             this.textBoxLatestGroupBoxStat = new System.Windows.Forms.TextBox();
@@ -44,12 +46,14 @@ namespace ITPM_Location
             this.labelRegisteredSubjectsStat = new System.Windows.Forms.Label();
             this.labelRegisteredRoomsStat = new System.Windows.Forms.Label();
             this.chartStat = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.statChartBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.StatRO_lecturers = new System.Windows.Forms.TextBox();
             this.StatRO_rooms = new System.Windows.Forms.TextBox();
             this.StatRO_subjects = new System.Windows.Forms.TextBox();
             this.StatRO_students = new System.Windows.Forms.TextBox();
             this.groupBoxStat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statChartBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxStat
@@ -162,19 +166,28 @@ namespace ITPM_Location
             // 
             // chartStat
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartStat.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartStat.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartStat.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStat.Legends.Add(legend2);
             this.chartStat.Location = new System.Drawing.Point(12, 303);
             this.chartStat.Name = "chartStat";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartStat.Series.Add(series1);
-            this.chartStat.Size = new System.Drawing.Size(520, 406);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.Legend = "Legend1";
+            series3.Name = "Lecture Hall";
+            series3.XValueMember = "Labs";
+            series3.YValueMembers = "LecHalls";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Legend = "Legend1";
+            series4.Name = "Laboratory";
+            this.chartStat.Series.Add(series3);
+            this.chartStat.Series.Add(series4);
+            this.chartStat.Size = new System.Drawing.Size(536, 406);
             this.chartStat.TabIndex = 0;
             this.chartStat.Text = "chart1";
+            this.chartStat.Click += new System.EventHandler(this.chartStat_Click);
             // 
             // StatRO_lecturers
             // 
@@ -213,7 +226,9 @@ namespace ITPM_Location
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1086, 733);
+            this.Controls.Add(this.chartStat);
             this.Controls.Add(this.StatRO_students);
             this.Controls.Add(this.StatRO_subjects);
             this.Controls.Add(this.StatRO_rooms);
@@ -223,13 +238,14 @@ namespace ITPM_Location
             this.Controls.Add(this.labelRegisteredStudentsStat);
             this.Controls.Add(this.labelRegisteredLecturersStat);
             this.Controls.Add(this.groupBoxStat);
-            this.Controls.Add(this.chartStat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Statistics";
-            this.Text = "Form1";
+            this.Text = "Statistics";
+            this.Load += new System.EventHandler(this.Statistics_Load);
             this.groupBoxStat.ResumeLayout(false);
             this.groupBoxStat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statChartBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +268,7 @@ namespace ITPM_Location
         private System.Windows.Forms.TextBox StatRO_rooms;
         private System.Windows.Forms.TextBox StatRO_subjects;
         private System.Windows.Forms.TextBox StatRO_students;
+        private System.Windows.Forms.BindingSource statChartBindingSource;
+
     }
 }
