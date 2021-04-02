@@ -58,8 +58,20 @@ namespace ITPM_Location
             {
                 MessageBox.Show("Empty");
             }
+
+            //for registered rooms
+            richTextBoxStat_rRooms.Text = Convert.ToString(rows);
             
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBoxStat_rRooms_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

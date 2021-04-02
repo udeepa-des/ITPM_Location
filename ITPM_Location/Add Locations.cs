@@ -117,5 +117,11 @@ namespace ITPM_Location
             Statistics s = new Statistics();
             s.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ManageLocations ml = new ManageLocations();
+            ml.Show();
+        }
     }
 }

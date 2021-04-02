@@ -30,10 +30,10 @@ namespace ITPM_Location
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxStat = new System.Windows.Forms.GroupBox();
             this.textBoxSubjectBoxStat = new System.Windows.Forms.TextBox();
             this.textBoxLatestGroupBoxStat = new System.Windows.Forms.TextBox();
@@ -47,10 +47,12 @@ namespace ITPM_Location
             this.labelRegisteredRoomsStat = new System.Windows.Forms.Label();
             this.chartStat = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.statChartBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.StatRO_lecturers = new System.Windows.Forms.TextBox();
-            this.StatRO_rooms = new System.Windows.Forms.TextBox();
-            this.StatRO_subjects = new System.Windows.Forms.TextBox();
-            this.StatRO_students = new System.Windows.Forms.TextBox();
+            this.richTextBoxStat_rRooms = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.richTextBoxStat_rSubjects = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxStat_rLecturers = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxStat_rStudents = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxStat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statChartBindingSource)).BeginInit();
@@ -77,6 +79,7 @@ namespace ITPM_Location
             // 
             this.textBoxSubjectBoxStat.Location = new System.Drawing.Point(183, 299);
             this.textBoxSubjectBoxStat.Name = "textBoxSubjectBoxStat";
+            this.textBoxSubjectBoxStat.ReadOnly = true;
             this.textBoxSubjectBoxStat.Size = new System.Drawing.Size(309, 28);
             this.textBoxSubjectBoxStat.TabIndex = 7;
             // 
@@ -84,6 +87,7 @@ namespace ITPM_Location
             // 
             this.textBoxLatestGroupBoxStat.Location = new System.Drawing.Point(183, 196);
             this.textBoxLatestGroupBoxStat.Name = "textBoxLatestGroupBoxStat";
+            this.textBoxLatestGroupBoxStat.ReadOnly = true;
             this.textBoxLatestGroupBoxStat.Size = new System.Drawing.Size(309, 28);
             this.textBoxLatestGroupBoxStat.TabIndex = 6;
             // 
@@ -91,6 +95,7 @@ namespace ITPM_Location
             // 
             this.textBoxLecturerBoxStat.Location = new System.Drawing.Point(183, 102);
             this.textBoxLecturerBoxStat.Name = "textBoxLecturerBoxStat";
+            this.textBoxLecturerBoxStat.ReadOnly = true;
             this.textBoxLecturerBoxStat.Size = new System.Drawing.Size(309, 28);
             this.textBoxLecturerBoxStat.TabIndex = 3;
             // 
@@ -128,7 +133,7 @@ namespace ITPM_Location
             // 
             this.labelRegisteredLecturersStat.AutoSize = true;
             this.labelRegisteredLecturersStat.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisteredLecturersStat.Location = new System.Drawing.Point(44, 212);
+            this.labelRegisteredLecturersStat.Location = new System.Drawing.Point(42, 257);
             this.labelRegisteredLecturersStat.Name = "labelRegisteredLecturersStat";
             this.labelRegisteredLecturersStat.Size = new System.Drawing.Size(191, 20);
             this.labelRegisteredLecturersStat.TabIndex = 4;
@@ -138,7 +143,7 @@ namespace ITPM_Location
             // 
             this.labelRegisteredStudentsStat.AutoSize = true;
             this.labelRegisteredStudentsStat.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold);
-            this.labelRegisteredStudentsStat.Location = new System.Drawing.Point(313, 212);
+            this.labelRegisteredStudentsStat.Location = new System.Drawing.Point(311, 257);
             this.labelRegisteredStudentsStat.Name = "labelRegisteredStudentsStat";
             this.labelRegisteredStudentsStat.Size = new System.Drawing.Size(186, 20);
             this.labelRegisteredStudentsStat.TabIndex = 5;
@@ -148,7 +153,7 @@ namespace ITPM_Location
             // 
             this.labelRegisteredSubjectsStat.AutoSize = true;
             this.labelRegisteredSubjectsStat.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold);
-            this.labelRegisteredSubjectsStat.Location = new System.Drawing.Point(609, 212);
+            this.labelRegisteredSubjectsStat.Location = new System.Drawing.Point(607, 257);
             this.labelRegisteredSubjectsStat.Name = "labelRegisteredSubjectsStat";
             this.labelRegisteredSubjectsStat.Size = new System.Drawing.Size(184, 20);
             this.labelRegisteredSubjectsStat.TabIndex = 6;
@@ -158,7 +163,7 @@ namespace ITPM_Location
             // 
             this.labelRegisteredRoomsStat.AutoSize = true;
             this.labelRegisteredRoomsStat.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold);
-            this.labelRegisteredRoomsStat.Location = new System.Drawing.Point(878, 212);
+            this.labelRegisteredRoomsStat.Location = new System.Drawing.Point(876, 257);
             this.labelRegisteredRoomsStat.Name = "labelRegisteredRoomsStat";
             this.labelRegisteredRoomsStat.Size = new System.Drawing.Size(168, 20);
             this.labelRegisteredRoomsStat.TabIndex = 7;
@@ -166,61 +171,86 @@ namespace ITPM_Location
             // 
             // chartStat
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartStat.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartStat.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.chartStat.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartStat.Legends.Add(legend6);
             this.chartStat.Location = new System.Drawing.Point(12, 303);
             this.chartStat.Name = "chartStat";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series3.Legend = "Legend1";
-            series3.Name = "Lecture Hall";
-            series3.XValueMember = "Labs";
-            series3.YValueMembers = "LecHalls";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series4.Legend = "Legend1";
-            series4.Name = "Laboratory";
-            this.chartStat.Series.Add(series3);
-            this.chartStat.Series.Add(series4);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series11.Legend = "Legend1";
+            series11.Name = "Lecture Hall";
+            series11.XValueMember = "Labs";
+            series11.YValueMembers = "LecHalls";
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series12.Legend = "Legend1";
+            series12.Name = "Laboratory";
+            this.chartStat.Series.Add(series11);
+            this.chartStat.Series.Add(series12);
             this.chartStat.Size = new System.Drawing.Size(536, 406);
             this.chartStat.TabIndex = 0;
             this.chartStat.Text = "chart1";
             this.chartStat.Click += new System.EventHandler(this.chartStat_Click);
             // 
-            // StatRO_lecturers
+            // richTextBoxStat_rRooms
             // 
-            this.StatRO_lecturers.Location = new System.Drawing.Point(95, 97);
-            this.StatRO_lecturers.Name = "StatRO_lecturers";
-            this.StatRO_lecturers.ReadOnly = true;
-            this.StatRO_lecturers.Size = new System.Drawing.Size(100, 22);
-            this.StatRO_lecturers.TabIndex = 8;
-            this.StatRO_lecturers.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.richTextBoxStat_rRooms.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxStat_rRooms.Location = new System.Drawing.Point(902, 105);
+            this.richTextBoxStat_rRooms.Name = "richTextBoxStat_rRooms";
+            this.richTextBoxStat_rRooms.ReadOnly = true;
+            this.richTextBoxStat_rRooms.Size = new System.Drawing.Size(110, 104);
+            this.richTextBoxStat_rRooms.TabIndex = 13;
+            this.richTextBoxStat_rRooms.Text = "";
+            this.richTextBoxStat_rRooms.TextChanged += new System.EventHandler(this.richTextBoxStat_rRooms_TextChanged);
             // 
-            // StatRO_rooms
+            // contextMenuStrip1
             // 
-            this.StatRO_rooms.Location = new System.Drawing.Point(910, 97);
-            this.StatRO_rooms.Name = "StatRO_rooms";
-            this.StatRO_rooms.ReadOnly = true;
-            this.StatRO_rooms.Size = new System.Drawing.Size(100, 22);
-            this.StatRO_rooms.TabIndex = 9;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // StatRO_subjects
+            // richTextBoxStat_rSubjects
             // 
-            this.StatRO_subjects.Location = new System.Drawing.Point(652, 97);
-            this.StatRO_subjects.Name = "StatRO_subjects";
-            this.StatRO_subjects.ReadOnly = true;
-            this.StatRO_subjects.Size = new System.Drawing.Size(100, 22);
-            this.StatRO_subjects.TabIndex = 11;
+            this.richTextBoxStat_rSubjects.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxStat_rSubjects.Location = new System.Drawing.Point(641, 105);
+            this.richTextBoxStat_rSubjects.Name = "richTextBoxStat_rSubjects";
+            this.richTextBoxStat_rSubjects.ReadOnly = true;
+            this.richTextBoxStat_rSubjects.Size = new System.Drawing.Size(110, 104);
+            this.richTextBoxStat_rSubjects.TabIndex = 15;
+            this.richTextBoxStat_rSubjects.Text = "";
             // 
-            // StatRO_students
+            // richTextBoxStat_rLecturers
             // 
-            this.StatRO_students.Location = new System.Drawing.Point(358, 97);
-            this.StatRO_students.Name = "StatRO_students";
-            this.StatRO_students.ReadOnly = true;
-            this.StatRO_students.Size = new System.Drawing.Size(100, 22);
-            this.StatRO_students.TabIndex = 12;
+            this.richTextBoxStat_rLecturers.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxStat_rLecturers.Location = new System.Drawing.Point(87, 105);
+            this.richTextBoxStat_rLecturers.Name = "richTextBoxStat_rLecturers";
+            this.richTextBoxStat_rLecturers.ReadOnly = true;
+            this.richTextBoxStat_rLecturers.Size = new System.Drawing.Size(110, 104);
+            this.richTextBoxStat_rLecturers.TabIndex = 16;
+            this.richTextBoxStat_rLecturers.Text = "";
+            // 
+            // richTextBoxStat_rStudents
+            // 
+            this.richTextBoxStat_rStudents.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxStat_rStudents.Location = new System.Drawing.Point(350, 105);
+            this.richTextBoxStat_rStudents.Name = "richTextBoxStat_rStudents";
+            this.richTextBoxStat_rStudents.ReadOnly = true;
+            this.richTextBoxStat_rStudents.Size = new System.Drawing.Size(110, 104);
+            this.richTextBoxStat_rStudents.TabIndex = 17;
+            this.richTextBoxStat_rStudents.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 19.8F);
+            this.label1.Location = new System.Drawing.Point(465, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 40);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Statistics";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Statistics
             // 
@@ -228,11 +258,12 @@ namespace ITPM_Location
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1086, 733);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.richTextBoxStat_rStudents);
+            this.Controls.Add(this.richTextBoxStat_rLecturers);
+            this.Controls.Add(this.richTextBoxStat_rSubjects);
+            this.Controls.Add(this.richTextBoxStat_rRooms);
             this.Controls.Add(this.chartStat);
-            this.Controls.Add(this.StatRO_students);
-            this.Controls.Add(this.StatRO_subjects);
-            this.Controls.Add(this.StatRO_rooms);
-            this.Controls.Add(this.StatRO_lecturers);
             this.Controls.Add(this.labelRegisteredRoomsStat);
             this.Controls.Add(this.labelRegisteredSubjectsStat);
             this.Controls.Add(this.labelRegisteredStudentsStat);
@@ -264,11 +295,12 @@ namespace ITPM_Location
         private System.Windows.Forms.Label labelRegisteredSubjectsStat;
         private System.Windows.Forms.Label labelRegisteredRoomsStat;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartStat;
-        private System.Windows.Forms.TextBox StatRO_lecturers;
-        private System.Windows.Forms.TextBox StatRO_rooms;
-        private System.Windows.Forms.TextBox StatRO_subjects;
-        private System.Windows.Forms.TextBox StatRO_students;
         private System.Windows.Forms.BindingSource statChartBindingSource;
-
+        private System.Windows.Forms.RichTextBox richTextBoxStat_rRooms;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.RichTextBox richTextBoxStat_rSubjects;
+        private System.Windows.Forms.RichTextBox richTextBoxStat_rLecturers;
+        private System.Windows.Forms.RichTextBox richTextBoxStat_rStudents;
+        private System.Windows.Forms.Label label1;
     }
 }

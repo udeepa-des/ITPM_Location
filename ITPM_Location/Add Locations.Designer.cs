@@ -209,30 +209,42 @@ namespace ITPM_Location
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(35, 352);
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.button3.Location = new System.Drawing.Point(0, 352);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 57);
+            this.button3.Size = new System.Drawing.Size(266, 57);
             this.button3.TabIndex = 15;
-            this.button3.Text = "button3";
+            this.button3.Text = "Statistics";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(35, 252);
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.button2.Location = new System.Drawing.Point(0, 252);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 56);
+            this.button2.Size = new System.Drawing.Size(266, 56);
             this.button2.TabIndex = 14;
-            this.button2.Text = "button2";
+            this.button2.Text = "Manage Locations";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 155);
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.button1.Location = new System.Drawing.Point(0, 156);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 54);
+            this.button1.Size = new System.Drawing.Size(266, 54);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Add Locations";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // AddLocation

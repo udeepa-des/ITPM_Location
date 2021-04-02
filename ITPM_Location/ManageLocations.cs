@@ -149,5 +149,10 @@ namespace ITPM_Location
                 MessageBox.Show("Failed to Delete Location. Try Again");
             }
         }
+
+        private void textBoxID_ML_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

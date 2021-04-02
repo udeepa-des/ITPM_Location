@@ -20,8 +20,8 @@ namespace ITPM_Location.LocationClasses
         public string Capacity { get; set; }
 
         //StatChart Table
-        public int Lab { get; set; }
-        public int Lec { get; set; }
+        //public int Lab { get; set; }
+        //public int Lec { get; set; }
 
 
         static string myconnstring = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
@@ -362,5 +362,6 @@ namespace ITPM_Location.LocationClasses
 
             return count;
         }
+
     }
 }

@@ -213,6 +213,7 @@ namespace ITPM_Location
             this.textBoxID_ML.Size = new System.Drawing.Size(100, 22);
             this.textBoxID_ML.TabIndex = 20;
             this.textBoxID_ML.Visible = false;
+            this.textBoxID_ML.TextChanged += new System.EventHandler(this.textBoxID_ML_TextChanged);
             // 
             // ManageLocations
             // 
