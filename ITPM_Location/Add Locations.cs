@@ -81,19 +81,7 @@ namespace ITPM_Location
             {
                 //Failed to Add Contact
                 MessageBox.Show("Failed to add new Location. Try Again");
-            }
-
-            //inserting data in to separate tables
-            bool successLab = c.InsertToLabTable(c);
-            bool successLec = c.InsertToLecTable(c);
-            if (successLab == true)
-            {
-                MessageBox.Show("Statistics Updated Successfully..");
-            }
-            else
-            {
-                MessageBox.Show("Failed To Update..");
-            }
+            }      
 
         }
 

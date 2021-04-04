@@ -30,10 +30,10 @@ namespace ITPM_Location
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxStat = new System.Windows.Forms.GroupBox();
             this.textBoxSubjectBoxStat = new System.Windows.Forms.TextBox();
             this.textBoxLatestGroupBoxStat = new System.Windows.Forms.TextBox();
@@ -171,24 +171,24 @@ namespace ITPM_Location
             // 
             // chartStat
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartStat.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartStat.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.chartStat.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStat.Legends.Add(legend2);
             this.chartStat.Location = new System.Drawing.Point(12, 303);
             this.chartStat.Name = "chartStat";
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series11.Legend = "Legend1";
-            series11.Name = "Lecture Hall";
-            series11.XValueMember = "Labs";
-            series11.YValueMembers = "LecHalls";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series12.Legend = "Legend1";
-            series12.Name = "Laboratory";
-            this.chartStat.Series.Add(series11);
-            this.chartStat.Series.Add(series12);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.Legend = "Legend1";
+            series3.Name = "Lecture Hall";
+            series3.XValueMember = "Labs";
+            series3.YValueMembers = "LecHalls";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Legend = "Legend1";
+            series4.Name = "Laboratory";
+            this.chartStat.Series.Add(series3);
+            this.chartStat.Series.Add(series4);
             this.chartStat.Size = new System.Drawing.Size(536, 406);
             this.chartStat.TabIndex = 0;
             this.chartStat.Text = "chart1";
@@ -196,8 +196,11 @@ namespace ITPM_Location
             // 
             // richTextBoxStat_rRooms
             // 
+            this.richTextBoxStat_rRooms.BackColor = System.Drawing.Color.White;
+            this.richTextBoxStat_rRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rRooms.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxStat_rRooms.Location = new System.Drawing.Point(902, 105);
+            this.richTextBoxStat_rRooms.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxStat_rRooms.Location = new System.Drawing.Point(934, 105);
             this.richTextBoxStat_rRooms.Name = "richTextBoxStat_rRooms";
             this.richTextBoxStat_rRooms.ReadOnly = true;
             this.richTextBoxStat_rRooms.Size = new System.Drawing.Size(110, 104);
@@ -213,17 +216,24 @@ namespace ITPM_Location
             // 
             // richTextBoxStat_rSubjects
             // 
+            this.richTextBoxStat_rSubjects.BackColor = System.Drawing.Color.White;
+            this.richTextBoxStat_rSubjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rSubjects.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxStat_rSubjects.ForeColor = System.Drawing.Color.White;
             this.richTextBoxStat_rSubjects.Location = new System.Drawing.Point(641, 105);
             this.richTextBoxStat_rSubjects.Name = "richTextBoxStat_rSubjects";
             this.richTextBoxStat_rSubjects.ReadOnly = true;
             this.richTextBoxStat_rSubjects.Size = new System.Drawing.Size(110, 104);
             this.richTextBoxStat_rSubjects.TabIndex = 15;
             this.richTextBoxStat_rSubjects.Text = "";
+            this.richTextBoxStat_rSubjects.TextChanged += new System.EventHandler(this.richTextBoxStat_rSubjects_TextChanged);
             // 
             // richTextBoxStat_rLecturers
             // 
+            this.richTextBoxStat_rLecturers.BackColor = System.Drawing.Color.White;
+            this.richTextBoxStat_rLecturers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rLecturers.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxStat_rLecturers.ForeColor = System.Drawing.Color.White;
             this.richTextBoxStat_rLecturers.Location = new System.Drawing.Point(87, 105);
             this.richTextBoxStat_rLecturers.Name = "richTextBoxStat_rLecturers";
             this.richTextBoxStat_rLecturers.ReadOnly = true;
@@ -233,7 +243,10 @@ namespace ITPM_Location
             // 
             // richTextBoxStat_rStudents
             // 
+            this.richTextBoxStat_rStudents.BackColor = System.Drawing.Color.White;
+            this.richTextBoxStat_rStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rStudents.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxStat_rStudents.ForeColor = System.Drawing.Color.White;
             this.richTextBoxStat_rStudents.Location = new System.Drawing.Point(350, 105);
             this.richTextBoxStat_rStudents.Name = "richTextBoxStat_rStudents";
             this.richTextBoxStat_rStudents.ReadOnly = true;
@@ -286,7 +299,6 @@ namespace ITPM_Location
         private System.Windows.Forms.GroupBox groupBoxStat;
         private System.Windows.Forms.TextBox textBoxSubjectBoxStat;
         private System.Windows.Forms.TextBox textBoxLatestGroupBoxStat;
-        private System.Windows.Forms.TextBox textBoxLecturerBoxStat;
         private System.Windows.Forms.Label lableSubjectBoxStat;
         private System.Windows.Forms.Label lableLatestGroupBoxStat;
         private System.Windows.Forms.Label lableLecturerBoxStat;
@@ -302,5 +314,6 @@ namespace ITPM_Location
         private System.Windows.Forms.RichTextBox richTextBoxStat_rLecturers;
         private System.Windows.Forms.RichTextBox richTextBoxStat_rStudents;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox textBoxLecturerBoxStat;
     }
 }

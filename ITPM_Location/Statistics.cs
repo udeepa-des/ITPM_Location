@@ -37,6 +37,19 @@ namespace ITPM_Location
 
         private void Statistics_Load(object sender, EventArgs e)
         {
+            //inserting data in to separate tables
+            bool successLab = c.InsertToLabTable(c);
+            bool successLec = c.InsertToLecTable(c);
+            if (successLab == true || successLec == true)
+            {
+                MessageBox.Show("Statistics Updated Successfully..");
+            }
+            else
+            {
+                MessageBox.Show("Failed To Update..");
+            }
+
+
             DataTable lab = c.LabForChart();
             DataTable lec = c.LecHallForChart();
             int rows = c.GetNoOfRows();
@@ -61,7 +74,10 @@ namespace ITPM_Location
 
             //for registered rooms
             richTextBoxStat_rRooms.Text = Convert.ToString(rows);
-            
+
+            //for latest lecturer
+            c.LatestLecturer();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -70,6 +86,11 @@ namespace ITPM_Location
         }
 
         private void richTextBoxStat_rRooms_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBoxStat_rSubjects_TextChanged(object sender, EventArgs e)
         {
 
         }

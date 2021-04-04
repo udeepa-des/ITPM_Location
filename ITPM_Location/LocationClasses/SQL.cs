@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace ITPM_Location.LocationClasses
 {
+
     class SQL
     {
+        //Statistics s = new Statistics();
         //Getters and setters Properties
         //Acts as a Data carrier 
         public int ID { get; set; }
@@ -249,7 +251,7 @@ namespace ITPM_Location.LocationClasses
             try
             {
                 //sql to update data in DB
-                string sql = "INSERT INTO LabForStat SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'La%'";
+                string sql = "INSERT INTO LabForStat(Numbers) SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'La%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 
                 //open DB connection
@@ -285,7 +287,7 @@ namespace ITPM_Location.LocationClasses
             try
             {
                 //sql to update data in DB
-                string sql = "INSERT INTO LecHallForStat SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'Le%'";
+                string sql = "INSERT INTO LecHallForStat(No) SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'Le%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 
                 //open DB connection
@@ -363,5 +365,45 @@ namespace ITPM_Location.LocationClasses
             return count;
         }
 
+        /*public DataTable LatestLecturer()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT TOP 1 BuildingName FROM Add_Location ORDER BY BuildingName DESC";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }*/
+
+        public void LatestLecturer()
+        {
+            SqlConnection Conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT TOP 1 BuildingName FROM Add_Location ORDER BY BuildingName DESC";
+            SqlCommand Comm1 = new SqlCommand(sqlText, Conn);
+            Conn.Open();
+            SqlDataReader DR1 = Comm1.ExecuteReader();
+            if (DR1.Read())
+            {
+                //s.textBoxLecturerBoxStat.Text = DR1.GetValue(0).ToString();
+            }
+            Conn.Close();
+        }
     }
 }

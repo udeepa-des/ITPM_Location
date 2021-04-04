@@ -100,27 +100,33 @@ namespace ITPM_Location
             // 
             // textBoxBuildingNameML
             // 
-            this.textBoxBuildingNameML.Location = new System.Drawing.Point(337, 473);
+            this.textBoxBuildingNameML.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxBuildingNameML.Location = new System.Drawing.Point(337, 470);
             this.textBoxBuildingNameML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxBuildingNameML.Multiline = true;
             this.textBoxBuildingNameML.Name = "textBoxBuildingNameML";
-            this.textBoxBuildingNameML.Size = new System.Drawing.Size(598, 22);
+            this.textBoxBuildingNameML.Size = new System.Drawing.Size(598, 30);
             this.textBoxBuildingNameML.TabIndex = 9;
             this.textBoxBuildingNameML.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBoxCapacityML
             // 
-            this.textBoxCapacityML.Location = new System.Drawing.Point(337, 665);
+            this.textBoxCapacityML.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxCapacityML.Location = new System.Drawing.Point(337, 661);
             this.textBoxCapacityML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxCapacityML.Multiline = true;
             this.textBoxCapacityML.Name = "textBoxCapacityML";
-            this.textBoxCapacityML.Size = new System.Drawing.Size(598, 22);
+            this.textBoxCapacityML.Size = new System.Drawing.Size(598, 30);
             this.textBoxCapacityML.TabIndex = 10;
             // 
             // textBoxRoomNameML
             // 
-            this.textBoxRoomNameML.Location = new System.Drawing.Point(337, 538);
+            this.textBoxRoomNameML.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxRoomNameML.Location = new System.Drawing.Point(337, 535);
             this.textBoxRoomNameML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRoomNameML.Multiline = true;
             this.textBoxRoomNameML.Name = "textBoxRoomNameML";
-            this.textBoxRoomNameML.Size = new System.Drawing.Size(598, 22);
+            this.textBoxRoomNameML.Size = new System.Drawing.Size(598, 30);
             this.textBoxRoomNameML.TabIndex = 12;
             // 
             // buttonMLupdate
