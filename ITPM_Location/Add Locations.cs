@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 namespace ITPM_Location
 {
     public partial class AddLocation : Form
-    {
+    { 
         string RoomType;
 
         public AddLocation()
@@ -85,6 +86,11 @@ namespace ITPM_Location
 
         }
 
+        private void AddLocation_Load(object sender, EventArgs e)
+        {
+          
+        }
+
         //to clear fields
         public void Clear()
         {
@@ -110,6 +116,7 @@ namespace ITPM_Location
         {
             ManageLocations ml = new ManageLocations();
             ml.Show();
+
         }
     }
 }

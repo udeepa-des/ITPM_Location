@@ -30,10 +30,10 @@ namespace ITPM_Location
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxStat = new System.Windows.Forms.GroupBox();
             this.textBoxSubjectBoxStat = new System.Windows.Forms.TextBox();
             this.textBoxLatestGroupBoxStat = new System.Windows.Forms.TextBox();
@@ -60,6 +60,7 @@ namespace ITPM_Location
             // 
             // groupBoxStat
             // 
+            this.groupBoxStat.BackColor = System.Drawing.Color.White;
             this.groupBoxStat.Controls.Add(this.textBoxSubjectBoxStat);
             this.groupBoxStat.Controls.Add(this.textBoxLatestGroupBoxStat);
             this.groupBoxStat.Controls.Add(this.textBoxLecturerBoxStat);
@@ -171,24 +172,24 @@ namespace ITPM_Location
             // 
             // chartStat
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartStat.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartStat.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chartStat.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartStat.Legends.Add(legend3);
             this.chartStat.Location = new System.Drawing.Point(12, 303);
             this.chartStat.Name = "chartStat";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series3.Legend = "Legend1";
-            series3.Name = "Lecture Hall";
-            series3.XValueMember = "Labs";
-            series3.YValueMembers = "LecHalls";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series4.Legend = "Legend1";
-            series4.Name = "Laboratory";
-            this.chartStat.Series.Add(series3);
-            this.chartStat.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series5.Legend = "Legend1";
+            series5.Name = "Lecture Hall";
+            series5.XValueMember = "Labs";
+            series5.YValueMembers = "LecHalls";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series6.Legend = "Legend1";
+            series6.Name = "Laboratory";
+            this.chartStat.Series.Add(series5);
+            this.chartStat.Series.Add(series6);
             this.chartStat.Size = new System.Drawing.Size(536, 406);
             this.chartStat.TabIndex = 0;
             this.chartStat.Text = "chart1";
@@ -198,9 +199,10 @@ namespace ITPM_Location
             // 
             this.richTextBoxStat_rRooms.BackColor = System.Drawing.Color.White;
             this.richTextBoxStat_rRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxStat_rRooms.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.richTextBoxStat_rRooms.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxStat_rRooms.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxStat_rRooms.Location = new System.Drawing.Point(934, 105);
+            this.richTextBoxStat_rRooms.Location = new System.Drawing.Point(934, 124);
             this.richTextBoxStat_rRooms.Name = "richTextBoxStat_rRooms";
             this.richTextBoxStat_rRooms.ReadOnly = true;
             this.richTextBoxStat_rRooms.Size = new System.Drawing.Size(110, 104);
@@ -219,8 +221,8 @@ namespace ITPM_Location
             this.richTextBoxStat_rSubjects.BackColor = System.Drawing.Color.White;
             this.richTextBoxStat_rSubjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rSubjects.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxStat_rSubjects.ForeColor = System.Drawing.Color.White;
-            this.richTextBoxStat_rSubjects.Location = new System.Drawing.Point(641, 105);
+            this.richTextBoxStat_rSubjects.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxStat_rSubjects.Location = new System.Drawing.Point(681, 124);
             this.richTextBoxStat_rSubjects.Name = "richTextBoxStat_rSubjects";
             this.richTextBoxStat_rSubjects.ReadOnly = true;
             this.richTextBoxStat_rSubjects.Size = new System.Drawing.Size(110, 104);
@@ -233,8 +235,8 @@ namespace ITPM_Location
             this.richTextBoxStat_rLecturers.BackColor = System.Drawing.Color.White;
             this.richTextBoxStat_rLecturers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rLecturers.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxStat_rLecturers.ForeColor = System.Drawing.Color.White;
-            this.richTextBoxStat_rLecturers.Location = new System.Drawing.Point(87, 105);
+            this.richTextBoxStat_rLecturers.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxStat_rLecturers.Location = new System.Drawing.Point(110, 124);
             this.richTextBoxStat_rLecturers.Name = "richTextBoxStat_rLecturers";
             this.richTextBoxStat_rLecturers.ReadOnly = true;
             this.richTextBoxStat_rLecturers.Size = new System.Drawing.Size(110, 104);
@@ -246,8 +248,8 @@ namespace ITPM_Location
             this.richTextBoxStat_rStudents.BackColor = System.Drawing.Color.White;
             this.richTextBoxStat_rStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rStudents.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxStat_rStudents.ForeColor = System.Drawing.Color.White;
-            this.richTextBoxStat_rStudents.Location = new System.Drawing.Point(350, 105);
+            this.richTextBoxStat_rStudents.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxStat_rStudents.Location = new System.Drawing.Point(387, 124);
             this.richTextBoxStat_rStudents.Name = "richTextBoxStat_rStudents";
             this.richTextBoxStat_rStudents.ReadOnly = true;
             this.richTextBoxStat_rStudents.Size = new System.Drawing.Size(110, 104);
@@ -258,7 +260,7 @@ namespace ITPM_Location
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 19.8F);
-            this.label1.Location = new System.Drawing.Point(465, 26);
+            this.label1.Location = new System.Drawing.Point(464, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 40);
             this.label1.TabIndex = 18;

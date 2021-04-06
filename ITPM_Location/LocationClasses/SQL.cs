@@ -186,61 +186,37 @@ namespace ITPM_Location.LocationClasses
             return isSuccess;
         }
 
-        public DataTable LabForChart()
+        public int LabForChart()
         {
             //Step 1: DB connection
             SqlConnection conn = new SqlConnection(myconnstring);
-            DataTable dt = new DataTable();
-            try
-            {
-                //Step 2: Writing sql query
-                string sql = "SELECT * FROM LabForStat";
-                //Creating cmd using sql and conn
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                //Creating SQL DataAdapter using cmd
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                conn.Open();
-                adapter.Fill(dt);
-            }
-            catch (Exception e)
-            {
+            String sqlText = "SELECT TOP 1 Numbers FROM LabForStat ORDER BY ID DESC";
 
-            }
-            finally
-            {
-                conn.Close();
-            }
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-            
-            return dt;
+            conn.Close();
+
+            return count;
         }
-        public DataTable LecHallForChart()
+        public int LecHallForChart()
         {
             //Step 1: DB connection
             SqlConnection conn = new SqlConnection(myconnstring);
-            DataTable dt = new DataTable();
-            try
-            {
-                //Step 2: Writing sql query
-                string sql = "SELECT * FROM LecHallForStat";
-                //Creating cmd using sql and conn
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                //Creating SQL DataAdapter using cmd
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                conn.Open();
-                adapter.Fill(dt);
-            }
-            catch (Exception e)
-            {
+            String sqlText = "SELECT TOP 1 No FROM LecHallForStat ORDER BY ID DESC";
 
-            }
-            finally
-            {
-                conn.Close();
-            }
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
 
+            conn.Close();
 
-            return dt;
+            return count;
         }
 
         public bool InsertToLabTable(SQL c)
@@ -364,46 +340,102 @@ namespace ITPM_Location.LocationClasses
 
             return count;
         }
-
-        /*public DataTable LatestLecturer()
+        //get the latest lecturer for statistics
+        public string LatestLecturer()
         {
-            //Step 1: DB connection
-            SqlConnection conn = new SqlConnection(myconnstring);
-            DataTable dt = new DataTable();
-            try
-            {
-                //Step 2: Writing sql query
-                string sql = "SELECT TOP 1 BuildingName FROM Add_Location ORDER BY BuildingName DESC";
-                //Creating cmd using sql and conn
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                //Creating SQL DataAdapter using cmd
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                conn.Open();
-                adapter.Fill(dt);
-            }
-            catch (Exception e)
-            {
+            string s="";
 
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return dt;
-        }*/
-
-        public void LatestLecturer()
-        {
             SqlConnection Conn = new SqlConnection(myconnstring);
-            String sqlText = "SELECT TOP 1 BuildingName FROM Add_Location ORDER BY BuildingName DESC";
+            String sqlText = "SELECT TOP 1 Lecturer_Name FROM Lecturer_Details_Table ORDER BY ID DESC";
             SqlCommand Comm1 = new SqlCommand(sqlText, Conn);
             Conn.Open();
             SqlDataReader DR1 = Comm1.ExecuteReader();
             if (DR1.Read())
             {
-                //s.textBoxLecturerBoxStat.Text = DR1.GetValue(0).ToString();
+                s = DR1.GetValue(0).ToString();
+                
             }
+            
             Conn.Close();
+
+            return s;
+        }
+
+        //get the latest student group for statistics
+        public string LatestGroup()
+        {
+            string s = "";
+
+            SqlConnection Conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT TOP 1 groupID FROM student_groups ORDER BY id DESC";
+            SqlCommand Comm1 = new SqlCommand(sqlText, Conn);
+            Conn.Open();
+            SqlDataReader DR1 = Comm1.ExecuteReader();
+            if (DR1.Read())
+            {
+                s = DR1.GetValue(0).ToString();
+
+            }
+
+            Conn.Close();
+
+            return s;
+        }
+
+        //get the latest student group for statistics
+        public string LatestSubject()
+        {
+            string s = "";
+
+            SqlConnection Conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT TOP 1 Subject_Name FROM Subj_Details_Table ORDER BY ID DESC";
+            SqlCommand Comm1 = new SqlCommand(sqlText, Conn);
+            Conn.Open();
+            SqlDataReader DR1 = Comm1.ExecuteReader();
+            if (DR1.Read())
+            {
+                s = DR1.GetValue(0).ToString();
+
+            }
+
+            Conn.Close();
+
+            return s;
+        }
+
+        //for the number of Subjects
+        public int NumOfSubjects()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT COUNT(ID) FROM Subj_Details_Table";
+
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count;
+        }
+
+        public int NumOfLecturers()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT COUNT(ID) FROM Lecturer_Details_Table";
+
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count;
         }
     }
 }

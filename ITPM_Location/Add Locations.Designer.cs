@@ -233,7 +233,7 @@ namespace ITPM_Location
             this.button2.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.button2.Location = new System.Drawing.Point(0, 190);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(266, 56);
+            this.button2.Size = new System.Drawing.Size(266, 59);
             this.button2.TabIndex = 14;
             this.button2.Text = "Manage Locations";
             this.button2.UseVisualStyleBackColor = true;
@@ -263,6 +263,7 @@ namespace ITPM_Location
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddLocation";
             this.Text = "Add Location";
+            this.Load += new System.EventHandler(this.AddLocation_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

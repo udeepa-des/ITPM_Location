@@ -49,23 +49,23 @@ namespace ITPM_Location
                 MessageBox.Show("Failed To Update..");
             }
 
-
-            DataTable lab = c.LabForChart();
-            DataTable lec = c.LecHallForChart();
+            //for the chart
+            int lab = c.LabForChart();
+            int lec = c.LecHallForChart();
             int rows = c.GetNoOfRows();
-            int labRows = c.GetNoOfRowsOfLab();
-            int lecRows = c.GetNoOfRowsofLecHall();
+            /*int labRows = c.GetNoOfRowsOfLab();
+            int lecRows = c.GetNoOfRowsofLecHall();*/
 
-            int i=0;
-            int x=0;
+            /*int i=0;
+            int x=0;*/
 
             if (rows >= 1)
             {
-                x = Convert.ToInt32(lec.Rows[lecRows - 1]["No"].ToString());
-                chartStat.Series["Lecture Hall"].Points.AddXY("Location", x);
+                //x = Convert.ToInt32(lec.Rows[lecRows - 1]["No"].ToString());
+                chartStat.Series["Lecture Hall"].Points.AddXY("Location",lec);
 
-                i = Convert.ToInt32(lab.Rows[labRows - 1]["Numbers"].ToString());
-                chartStat.Series["Laboratory"].Points.AddXY("Location", i);
+                //i = Convert.ToInt32(lab.Rows[labRows - 1]["Numbers"].ToString());
+                chartStat.Series["Laboratory"].Points.AddXY("Location", lab);
             }
             else
             {
@@ -76,8 +76,20 @@ namespace ITPM_Location
             richTextBoxStat_rRooms.Text = Convert.ToString(rows);
 
             //for latest lecturer
-            c.LatestLecturer();
-           
+            textBoxLecturerBoxStat.Text = Convert.ToString(c.LatestLecturer());
+
+            //for the latest group
+            textBoxLatestGroupBoxStat.Text = Convert.ToString(c.LatestGroup());
+
+            //for latest subject
+            textBoxSubjectBoxStat.Text = Convert.ToString(c.LatestSubject());
+
+            //for the number of Subjects
+            richTextBoxStat_rSubjects.Text = Convert.ToString(c.NumOfSubjects());
+
+            //for the number of Subjects
+            richTextBoxStat_rLecturers.Text = Convert.ToString(c.NumOfLecturers());
+
         }
 
         private void label1_Click(object sender, EventArgs e)
