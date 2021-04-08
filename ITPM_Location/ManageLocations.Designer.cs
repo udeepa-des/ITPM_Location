@@ -44,6 +44,7 @@ namespace ITPM_Location
             this.ML_RoomType_lab = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBoxID_ML = new System.Windows.Forms.TextBox();
+            this.searchML = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,12 +222,25 @@ namespace ITPM_Location
             this.textBoxID_ML.Visible = false;
             this.textBoxID_ML.TextChanged += new System.EventHandler(this.textBoxID_ML_TextChanged);
             // 
+            // searchML
+            // 
+            this.searchML.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchML.ForeColor = System.Drawing.Color.DarkGray;
+            this.searchML.Location = new System.Drawing.Point(834, 20);
+            this.searchML.Name = "searchML";
+            this.searchML.Size = new System.Drawing.Size(240, 23);
+            this.searchML.TabIndex = 21;
+            this.searchML.Text = "Search using Room Name";
+            this.searchML.MouseClick += new System.Windows.Forms.MouseEventHandler(this.searchML_MouseClick_1);
+            this.searchML.TextChanged += new System.EventHandler(this.searchML_TextChanged_1);
+            // 
             // ManageLocations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1086, 733);
+            this.Controls.Add(this.searchML);
             this.Controls.Add(this.textBoxID_ML);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ML_RoomType_lab);
@@ -270,5 +284,6 @@ namespace ITPM_Location
         private System.Windows.Forms.RadioButton ML_RoomType_lab;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBoxID_ML;
+        public System.Windows.Forms.TextBox searchML;
     }
 }

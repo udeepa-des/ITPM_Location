@@ -90,6 +90,9 @@ namespace ITPM_Location
             //for the number of Subjects
             richTextBoxStat_rLecturers.Text = Convert.ToString(c.NumOfLecturers());
 
+            //for the number of student groups
+            richTextBoxStat_rStudents.Text = Convert.ToString(c.NumOfStudentGroups());
+
         }
 
         private void label1_Click(object sender, EventArgs e)

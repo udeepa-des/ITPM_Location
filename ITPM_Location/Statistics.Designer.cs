@@ -144,11 +144,11 @@ namespace ITPM_Location
             // 
             this.labelRegisteredStudentsStat.AutoSize = true;
             this.labelRegisteredStudentsStat.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold);
-            this.labelRegisteredStudentsStat.Location = new System.Drawing.Point(311, 257);
+            this.labelRegisteredStudentsStat.Location = new System.Drawing.Point(296, 257);
             this.labelRegisteredStudentsStat.Name = "labelRegisteredStudentsStat";
-            this.labelRegisteredStudentsStat.Size = new System.Drawing.Size(186, 20);
+            this.labelRegisteredStudentsStat.Size = new System.Drawing.Size(243, 20);
             this.labelRegisteredStudentsStat.TabIndex = 5;
-            this.labelRegisteredStudentsStat.Text = "Registered Students";
+            this.labelRegisteredStudentsStat.Text = "Registered Student Groups";
             // 
             // labelRegisteredSubjectsStat
             // 
@@ -249,7 +249,7 @@ namespace ITPM_Location
             this.richTextBoxStat_rStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxStat_rStudents.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxStat_rStudents.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxStat_rStudents.Location = new System.Drawing.Point(387, 124);
+            this.richTextBoxStat_rStudents.Location = new System.Drawing.Point(413, 124);
             this.richTextBoxStat_rStudents.Name = "richTextBoxStat_rStudents";
             this.richTextBoxStat_rStudents.ReadOnly = true;
             this.richTextBoxStat_rStudents.Size = new System.Drawing.Size(110, 104);

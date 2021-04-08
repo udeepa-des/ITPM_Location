@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -153,6 +155,43 @@ namespace ITPM_Location
         private void textBoxID_ML_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchML_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        /*private void searchML_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = c.Search();
+            dataGridView1.DataSource = dt;
+        }*/
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        //search function
+        private void searchML_TextChanged_1(object sender, EventArgs e)
+        {
+            searchML.ForeColor = Color.Black;
+            string myconnstring = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            SqlConnection conn = new SqlConnection(myconnstring);
+            string sql = "SELECT * FROM Add_Location where RoomName LIKE '" + searchML.Text + "%'";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
+            conn.Close();
+        }
+
+        private void searchML_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            searchML.Text = "";
         }
     }
 }

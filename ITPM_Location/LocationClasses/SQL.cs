@@ -44,7 +44,8 @@ namespace ITPM_Location.LocationClasses
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
                 adapter.Fill(dt);
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
 
             }
@@ -56,7 +57,7 @@ namespace ITPM_Location.LocationClasses
         }
 
         //Inserting Data into DB
-        public bool Insert (SQL c)
+        public bool Insert(SQL c)
         {
             //Creating a default return type and setting its value to false
             bool isSuccess = false;
@@ -90,7 +91,7 @@ namespace ITPM_Location.LocationClasses
                     isSuccess = false;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
@@ -133,7 +134,7 @@ namespace ITPM_Location.LocationClasses
                     isSuccess = false;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
@@ -174,7 +175,7 @@ namespace ITPM_Location.LocationClasses
                     isSuccess = false;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
@@ -229,7 +230,7 @@ namespace ITPM_Location.LocationClasses
                 //sql to update data in DB
                 string sql = "INSERT INTO LabForStat(Numbers) SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'La%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
+
                 //open DB connection
                 conn.Open();
 
@@ -265,7 +266,7 @@ namespace ITPM_Location.LocationClasses
                 //sql to update data in DB
                 string sql = "INSERT INTO LecHallForStat(No) SELECT COUNT(ID) FROM Add_Location WHERE RoomType LIKE 'Le%'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
+
                 //open DB connection
                 conn.Open();
 
@@ -343,7 +344,7 @@ namespace ITPM_Location.LocationClasses
         //get the latest lecturer for statistics
         public string LatestLecturer()
         {
-            string s="";
+            string s = "";
 
             SqlConnection Conn = new SqlConnection(myconnstring);
             String sqlText = "SELECT TOP 1 Lecturer_Name FROM Lecturer_Details_Table ORDER BY ID DESC";
@@ -353,9 +354,9 @@ namespace ITPM_Location.LocationClasses
             if (DR1.Read())
             {
                 s = DR1.GetValue(0).ToString();
-                
+
             }
-            
+
             Conn.Close();
 
             return s;
@@ -420,12 +421,30 @@ namespace ITPM_Location.LocationClasses
 
             return count;
         }
-
+        //for the number of Lecturers
         public int NumOfLecturers()
         {
             //Step 1: DB connection
             SqlConnection conn = new SqlConnection(myconnstring);
             String sqlText = "SELECT COUNT(ID) FROM Lecturer_Details_Table";
+
+            // Create the connection and the command.
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            conn.Open();
+            // Execute the scalar SQL statement and store results.
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count;
+        }
+
+        //for the number of studentGroups
+        public int NumOfStudentGroups()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            String sqlText = "SELECT COUNT(id) FROM student_groups";
 
             // Create the connection and the command.
             SqlCommand cmd = new SqlCommand(sqlText, conn);
