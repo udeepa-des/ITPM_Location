@@ -118,5 +118,11 @@ namespace ITPM_Location
             ml.Show();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Nav nav = new Nav();
+            nav.Show();
+        }
     }
 }

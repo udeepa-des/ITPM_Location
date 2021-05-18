@@ -12,14 +12,27 @@ namespace ITPM_Location.LocationClasses
 
     class SQL
     {
-        //Statistics s = new Statistics();
-        //Getters and setters Properties
-        //Acts as a Data carrier 
+        
         public int ID { get; set; }
         public string BName { get; set; }
         public string RName { get; set; }
         public string RType { get; set; }
         public string Capacity { get; set; }
+        public string LL_RoomName { get; set; }
+        public string LL_Lecturer { get; set; }
+        public string LS_RoomName { get; set; }
+        public string LS_Subject { get; set; }
+        public string LG_RoomName { get; set; }
+        public string LG_Group { get; set; }
+        public string LT_RoomName { get; set; }
+        public string LT_Tag { get; set; }
+        public string LSe_Session { get; set; }
+        public string LSe_RoomName { get; set; }
+        public string LTS_Tag { get; set; }
+        public string LTS_Subject { get; set; }
+        public string LTS_RoomName { get; set; }
+        public string LCS_RoomName { get; set; }
+        public string LCS_Session1 { get; set; }
 
         //StatChart Table
         //public int Lab { get; set; }
@@ -455,6 +468,510 @@ namespace ITPM_Location.LocationClasses
             conn.Close();
 
             return count;
+        }
+
+        //MR_Lecturers code starts from here
+        //get database data to comboBoxes
+        public DataTable comboBoxLecturer()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT Lecturer_Name FROM Lecturer_Details_Table";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public DataTable comboBoxRoom()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT RoomName FROM Add_Location";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+
+        public bool InsertToLocation_Lecturers(SQL c)
+        {
+            //Creating a default return type and setting its value to false
+            bool isSuccess = false;
+
+            //STEP 1: Connect DB
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //Step 2: Create a Sql query to insert data
+                string sql = "INSERT INTO Location_Lecturer(RoomName, Lecturer) VALUES (@RoomName, @Lecturer)";
+
+                //Creating SQL commandusing sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Create Parameter to add data
+                cmd.Parameters.AddWithValue("@RoomName", c.LL_RoomName);
+                cmd.Parameters.AddWithValue("@Lecturer", c.LL_Lecturer);
+
+                //Open the connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        //MR_Lecturers code end here
+
+        //MR_Subject code starts here
+        public DataTable comboBoxSubject()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT Subject_Name FROM Subj_Details_Table";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+
+        public bool InsertToLocation_Subject(SQL c)
+        {
+            //Creating a default return type and setting its value to false
+            bool isSuccess = false;
+
+            //STEP 1: Connect DB
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //Step 2: Create a Sql query to insert data
+                string sql = "INSERT INTO Location_Subject(RoomName, Subject) VALUES (@RoomName, @Subject)";
+
+                //Creating SQL commandusing sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Create Parameter to add data
+                cmd.Parameters.AddWithValue("@RoomName", c.LS_RoomName);
+                cmd.Parameters.AddWithValue("@Subject", c.LS_Subject);
+
+                //Open the connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+
+        //MR_Group code starts here
+        public DataTable comboBoxGroup()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT groupID FROM student_groups";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool InsertToLocation_Group(SQL c)
+        {
+            //Creating a default return type and setting its value to false
+            bool isSuccess = false;
+
+            //STEP 1: Connect DB
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //Step 2: Create a Sql query to insert data
+                string sql = "INSERT INTO Location_Group(RoomName, [Group]) VALUES (@RoomName, @Group)";
+
+                //Creating SQL commandusing sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Create Parameter to add data
+                cmd.Parameters.AddWithValue("@RoomName", c.LG_RoomName);
+                cmd.Parameters.AddWithValue("@Group", c.LG_Group);
+
+                //Open the connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        //Code for Tag starts here
+        public DataTable comboBoxTag()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT Tag FROM Tag";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool InsertToLocation_Tag(SQL c)
+        {
+            //Creating a default return type and setting its value to false
+            bool isSuccess = false;
+
+            //STEP 1: Connect DB
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //Step 2: Create a Sql query to insert data
+                string sql = "INSERT INTO Location_Tag(RoomName, Tag) VALUES (@RoomName, @Tag)";
+
+                //Creating SQL commandusing sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Create Parameter to add data
+                cmd.Parameters.AddWithValue("@RoomName", c.LT_RoomName);
+                cmd.Parameters.AddWithValue("@Tag", c.LT_Tag);
+
+                //Open the connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        //Session code starts here
+        public DataTable comboBoxSession()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT Session FROM Session";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool InsertToLocation_Session(SQL c)
+        {
+            //Creating a default return type and setting its value to false
+            bool isSuccess = false;
+
+            //STEP 1: Connect DB
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //Step 2: Create a Sql query to insert data
+                string sql = "INSERT INTO Location_Session(RoomName, SessionID) VALUES (@RoomName, @Session)";
+
+                //Creating SQL commandusing sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Create Parameter to add data
+                cmd.Parameters.AddWithValue("@RoomName", c.LSe_RoomName);
+                cmd.Parameters.AddWithValue("@Session", c.LSe_Session);
+
+                //Open the connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        public bool InsertToLocation_Tag_n_Sub(SQL c)
+        {
+            //Creating a default return type and setting its value to false
+            bool isSuccess = false;
+
+            //STEP 1: Connect DB
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //Step 2: Create a Sql query to insert data
+                string sql = "INSERT INTO Location_Tag_n_Sub(Tag, Subject, RoomName) VALUES (@Tag, @Subject, @RoomName)";
+
+                //Creating SQL commandusing sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Create Parameter to add data
+                cmd.Parameters.AddWithValue("@Tag", c.LTS_Tag);
+                cmd.Parameters.AddWithValue("@Subject", c.LTS_Subject);
+                cmd.Parameters.AddWithValue("@RoomName", c.LTS_RoomName);
+                
+                //Open the connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+
+        //consecutive sessions
+        public DataTable Select_consecutive_sessions()
+        {
+            //Step 1: DB connection
+            SqlConnection conn = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+                //Step 2: Writing sql query
+                string sql = "SELECT * FROM Session";
+                //Creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Creating SQL DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public bool InsertToLocation_Consecutive_session(SQL c)
+        {
+            //Creating a default return type and setting its value to false
+            bool isSuccess = false;
+
+            //STEP 1: Connect DB
+            SqlConnection conn = new SqlConnection(myconnstring);
+            try
+            {
+                //Step 2: Create a Sql query to insert data
+                string sql = "INSERT INTO Location_ConsecutiveSessions(RoomName, Session1, Session2, Session1_Tag, Session2_Tag) VALUES (@RoomName, @Session1, '', '', '')";
+
+                //Creating SQL commandusing sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //Create Parameter to add data
+                cmd.Parameters.AddWithValue("@RoomName", c.LCS_RoomName);
+                cmd.Parameters.AddWithValue("@Session1", c.LCS_Session1);
+
+                //Open the connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                //if the query runs successfully then the value of rows will be greater than 0 else its value will be 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
         }
     }
 }
