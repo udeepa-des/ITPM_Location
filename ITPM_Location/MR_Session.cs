@@ -46,7 +46,7 @@ namespace ITPM_Location
             string myconnstring = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
             SqlConnection conn = new SqlConnection(myconnstring);
             DataTable dt = new DataTable();
-
+            
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT Session FROM Session where Session='" + comboBox1Session.SelectedItem.ToString() + "'";
             //Creating cmd using sql and conn

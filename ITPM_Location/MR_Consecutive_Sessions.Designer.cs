@@ -93,7 +93,7 @@ namespace ITPM_Location
             // 
             this.textBoxHidden_CS.Location = new System.Drawing.Point(30, 336);
             this.textBoxHidden_CS.Name = "textBoxHidden_CS";
-            this.textBoxHidden_CS.Size = new System.Drawing.Size(100, 28);
+            this.textBoxHidden_CS.Size = new System.Drawing.Size(100, 22);
             this.textBoxHidden_CS.TabIndex = 3;
             this.textBoxHidden_CS.Visible = false;
             // 
@@ -114,11 +114,10 @@ namespace ITPM_Location
             this.Sessions.Controls.Add(this.button2);
             this.Sessions.Controls.Add(this.textBoxHidden_CS);
             this.Sessions.Controls.Add(this.buttonAdd_Room);
-            this.Sessions.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sessions.Location = new System.Drawing.Point(4, 31);
+            this.Sessions.Location = new System.Drawing.Point(4, 25);
             this.Sessions.Name = "Sessions";
             this.Sessions.Padding = new System.Windows.Forms.Padding(3);
-            this.Sessions.Size = new System.Drawing.Size(1054, 680);
+            this.Sessions.Size = new System.Drawing.Size(1054, 686);
             this.Sessions.TabIndex = 0;
             this.Sessions.Text = "Sessions";
             this.Sessions.UseVisualStyleBackColor = true;
@@ -130,10 +129,10 @@ namespace ITPM_Location
             this.ConsecutivePage.Controls.Add(this.button1RefreshCon);
             this.ConsecutivePage.Controls.Add(this.textBoxHiddenCon);
             this.ConsecutivePage.Controls.Add(this.button3AddRoomCon);
-            this.ConsecutivePage.Location = new System.Drawing.Point(4, 31);
+            this.ConsecutivePage.Location = new System.Drawing.Point(4, 25);
             this.ConsecutivePage.Name = "ConsecutivePage";
             this.ConsecutivePage.Padding = new System.Windows.Forms.Padding(3);
-            this.ConsecutivePage.Size = new System.Drawing.Size(1054, 680);
+            this.ConsecutivePage.Size = new System.Drawing.Size(1054, 686);
             this.ConsecutivePage.TabIndex = 1;
             this.ConsecutivePage.Text = "Consecutive";
             this.ConsecutivePage.UseVisualStyleBackColor = true;
@@ -171,7 +170,7 @@ namespace ITPM_Location
             // 
             this.textBoxHiddenCon.Location = new System.Drawing.Point(28, 324);
             this.textBoxHiddenCon.Name = "textBoxHiddenCon";
-            this.textBoxHiddenCon.Size = new System.Drawing.Size(100, 29);
+            this.textBoxHiddenCon.Size = new System.Drawing.Size(100, 22);
             this.textBoxHiddenCon.TabIndex = 7;
             this.textBoxHiddenCon.Visible = false;
             // 
