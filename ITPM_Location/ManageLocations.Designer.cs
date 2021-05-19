@@ -138,7 +138,7 @@ namespace ITPM_Location
             this.buttonMLupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMLupdate.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.buttonMLupdate.ForeColor = System.Drawing.Color.White;
-            this.buttonMLupdate.Location = new System.Drawing.Point(834, 89);
+            this.buttonMLupdate.Location = new System.Drawing.Point(834, 117);
             this.buttonMLupdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMLupdate.Name = "buttonMLupdate";
             this.buttonMLupdate.Size = new System.Drawing.Size(163, 38);
@@ -153,7 +153,7 @@ namespace ITPM_Location
             this.buttonMLdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMLdelete.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.buttonMLdelete.ForeColor = System.Drawing.Color.White;
-            this.buttonMLdelete.Location = new System.Drawing.Point(834, 236);
+            this.buttonMLdelete.Location = new System.Drawing.Point(834, 212);
             this.buttonMLdelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMLdelete.Name = "buttonMLdelete";
             this.buttonMLdelete.Size = new System.Drawing.Size(163, 38);
@@ -169,7 +169,7 @@ namespace ITPM_Location
             this.buttonMLclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMLclear.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.buttonMLclear.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.buttonMLclear.Location = new System.Drawing.Point(834, 379);
+            this.buttonMLclear.Location = new System.Drawing.Point(834, 316);
             this.buttonMLclear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMLclear.Name = "buttonMLclear";
             this.buttonMLclear.Size = new System.Drawing.Size(163, 38);
@@ -204,12 +204,14 @@ namespace ITPM_Location
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(62, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(736, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 328);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -240,7 +242,7 @@ namespace ITPM_Location
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 32);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ManageLocations
             // 

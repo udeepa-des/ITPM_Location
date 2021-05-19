@@ -42,24 +42,7 @@ namespace ITPM_Location
 
         private void comboBox1Session_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*//Step 1: DB connection
-            string myconnstring = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
-            SqlConnection conn = new SqlConnection(myconnstring);
-            DataTable dt = new DataTable();
-
-            //Step 2: Writing sql query
-            string sql = "SELECT DISTINCT Session FROM Session where Session='" + comboBox1Session.SelectedItem.ToString() + "'";
-            //Creating cmd using sql and conn
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            //Creating SQL DataAdapter using cmd
-            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            conn.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            adapter.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
-            {
-                textBox1Session.AppendText("\t" + dr["Session"].ToString() + "\t");
-            }*/
+            
             textBox1Session.AppendText("\t" + comboBox1Session.SelectedItem + "\t");
         }
 

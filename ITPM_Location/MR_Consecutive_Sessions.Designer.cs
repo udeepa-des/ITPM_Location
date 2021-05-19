@@ -49,6 +49,8 @@ namespace ITPM_Location
             // 
             // dataGridView1CS
             // 
+            this.dataGridView1CS.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1CS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1CS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1CS.Location = new System.Drawing.Point(30, 42);
             this.dataGridView1CS.Name = "dataGridView1CS";
@@ -91,6 +93,7 @@ namespace ITPM_Location
             this.textBoxHidden_CS.Name = "textBoxHidden_CS";
             this.textBoxHidden_CS.Size = new System.Drawing.Size(100, 22);
             this.textBoxHidden_CS.TabIndex = 3;
+            this.textBoxHidden_CS.Visible = false;
             // 
             // tabControl1
             // 
@@ -134,8 +137,10 @@ namespace ITPM_Location
             // 
             // dataGridView1Con
             // 
+            this.dataGridView1Con.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1Con.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1Con.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1Con.Location = new System.Drawing.Point(28, 30);
+            this.dataGridView1Con.Location = new System.Drawing.Point(30, 42);
             this.dataGridView1Con.Name = "dataGridView1Con";
             this.dataGridView1Con.RowHeadersWidth = 51;
             this.dataGridView1Con.RowTemplate.Height = 24;
@@ -149,7 +154,7 @@ namespace ITPM_Location
             this.button1RefreshCon.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1RefreshCon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1RefreshCon.ForeColor = System.Drawing.Color.White;
-            this.button1RefreshCon.Location = new System.Drawing.Point(610, 431);
+            this.button1RefreshCon.Location = new System.Drawing.Point(612, 443);
             this.button1RefreshCon.Name = "button1RefreshCon";
             this.button1RefreshCon.Size = new System.Drawing.Size(200, 60);
             this.button1RefreshCon.TabIndex = 6;
@@ -163,13 +168,14 @@ namespace ITPM_Location
             this.textBoxHiddenCon.Name = "textBoxHiddenCon";
             this.textBoxHiddenCon.Size = new System.Drawing.Size(100, 22);
             this.textBoxHiddenCon.TabIndex = 7;
+            this.textBoxHiddenCon.Visible = false;
             // 
             // button3AddRoomCon
             // 
             this.button3AddRoomCon.BackColor = System.Drawing.Color.Green;
             this.button3AddRoomCon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3AddRoomCon.ForeColor = System.Drawing.Color.White;
-            this.button3AddRoomCon.Location = new System.Drawing.Point(204, 431);
+            this.button3AddRoomCon.Location = new System.Drawing.Point(206, 443);
             this.button3AddRoomCon.Name = "button3AddRoomCon";
             this.button3AddRoomCon.Size = new System.Drawing.Size(200, 60);
             this.button3AddRoomCon.TabIndex = 5;
