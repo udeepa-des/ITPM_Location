@@ -29,6 +29,7 @@ namespace ITPM_Location
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelManageLocations = new System.Windows.Forms.Label();
             this.labelBuildingNameManageLocations = new System.Windows.Forms.Label();
             this.labelCapacity = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@ namespace ITPM_Location
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBoxID_ML = new System.Windows.Forms.TextBox();
             this.searchML = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,12 +204,14 @@ namespace ITPM_Location
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(736, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(756, 328);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -233,6 +237,12 @@ namespace ITPM_Location
             this.searchML.Text = "Search using Room Name";
             this.searchML.MouseClick += new System.Windows.Forms.MouseEventHandler(this.searchML_MouseClick_1);
             this.searchML.TextChanged += new System.EventHandler(this.searchML_TextChanged_1);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ManageLocations
             // 
@@ -285,5 +295,6 @@ namespace ITPM_Location
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBoxID_ML;
         public System.Windows.Forms.TextBox searchML;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
