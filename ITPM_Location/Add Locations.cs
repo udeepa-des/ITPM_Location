@@ -88,7 +88,24 @@ namespace ITPM_Location
 
         private void AddLocation_Load(object sender, EventArgs e)
         {
-          
+            panel2.Visible = false;
+        }
+
+        private void hideSubMenu()
+        {
+            if (panel2.Visible == true)
+                panel2.Visible = false;
+        }
+
+        private void showSubMenu(Panel submenu)
+        {
+            if (submenu.Visible == false)
+            {
+                hideSubMenu();
+                submenu.Visible = true;
+            }
+            else
+                submenu.Visible = false;
         }
 
         //to clear fields
@@ -121,8 +138,43 @@ namespace ITPM_Location
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Nav nav = new Nav();
-            nav.Show();
+            showSubMenu(panel2);
+        }
+
+        private void button4SubMR_Click(object sender, EventArgs e)
+        {
+            MR_Subject sub = new MR_Subject();
+            sub.Show();
+        }
+
+        private void button5TagMR_Click(object sender, EventArgs e)
+        {
+            MR_Tag tag = new MR_Tag();
+            tag.Show();
+        }
+
+        private void button6LecMR_Click(object sender, EventArgs e)
+        {
+            MR_Lecturer lec = new MR_Lecturer();
+            lec.Show();
+        }
+
+        private void button7grpMR_Click(object sender, EventArgs e)
+        {
+            MR_Group grp = new MR_Group();
+            grp.Show();
+        }
+
+        private void button8sessMR_Click(object sender, EventArgs e)
+        {
+            MR_Consecutive_Sessions cs = new MR_Consecutive_Sessions();
+            cs.Show();
+        }
+
+        private void button9TnSubMR_Click(object sender, EventArgs e)
+        {
+            T_and_Sub ts = new T_and_Sub();
+            ts.Show();
         }
     }
 }

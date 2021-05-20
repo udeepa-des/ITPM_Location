@@ -43,17 +43,26 @@ namespace ITPM_Location
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelExampleRoomNameAL = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1MainHeader = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button4SubMR = new System.Windows.Forms.Button();
+            this.button5TagMR = new System.Windows.Forms.Button();
+            this.button6LecMR = new System.Windows.Forms.Button();
+            this.button7grpMR = new System.Windows.Forms.Button();
+            this.button8sessMR = new System.Windows.Forms.Button();
+            this.button9TnSubMR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelBuildingName
             // 
             this.labelBuildingName.AutoSize = true;
             this.labelBuildingName.Font = new System.Drawing.Font("Montserrat", 19.8F);
-            this.labelBuildingName.Location = new System.Drawing.Point(555, 34);
+            this.labelBuildingName.Location = new System.Drawing.Point(555, 38);
             this.labelBuildingName.Name = "labelBuildingName";
             this.labelBuildingName.Size = new System.Drawing.Size(256, 40);
             this.labelBuildingName.TabIndex = 0;
@@ -204,7 +213,9 @@ namespace ITPM_Location
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label1MainHeader);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -213,17 +224,39 @@ namespace ITPM_Location
             this.panel1.Size = new System.Drawing.Size(266, 736);
             this.panel1.TabIndex = 13;
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Montserrat", 10.8F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 347);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(266, 57);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Manage Rooms";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Montserrat", 10.8F);
-            this.button3.Location = new System.Drawing.Point(0, 302);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(0, 284);
             this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(266, 57);
             this.button3.TabIndex = 15;
             this.button3.Text = "Statistics";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -231,29 +264,146 @@ namespace ITPM_Location
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Montserrat", 10.8F);
-            this.button2.Location = new System.Drawing.Point(0, 190);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(0, 212);
             this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(266, 59);
             this.button2.TabIndex = 14;
             this.button2.Text = "Manage Locations";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // label1MainHeader
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 10.8F);
-            this.button1.Location = new System.Drawing.Point(0, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 57);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Manage Rooms";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label1MainHeader.AutoSize = true;
+            this.label1MainHeader.Font = new System.Drawing.Font("Trebuchet MS", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1MainHeader.ForeColor = System.Drawing.Color.White;
+            this.label1MainHeader.Location = new System.Drawing.Point(3, 18);
+            this.label1MainHeader.Name = "label1MainHeader";
+            this.label1MainHeader.Size = new System.Drawing.Size(250, 61);
+            this.label1MainHeader.TabIndex = 17;
+            this.label1MainHeader.Text = "LOCATION";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button9TnSubMR);
+            this.panel2.Controls.Add(this.button8sessMR);
+            this.panel2.Controls.Add(this.button7grpMR);
+            this.panel2.Controls.Add(this.button6LecMR);
+            this.panel2.Controls.Add(this.button5TagMR);
+            this.panel2.Controls.Add(this.button4SubMR);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 403);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(266, 333);
+            this.panel2.TabIndex = 18;
+            // 
+            // button4SubMR
+            // 
+            this.button4SubMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            this.button4SubMR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4SubMR.FlatAppearance.BorderSize = 0;
+            this.button4SubMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4SubMR.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4SubMR.ForeColor = System.Drawing.Color.White;
+            this.button4SubMR.Location = new System.Drawing.Point(0, 3);
+            this.button4SubMR.Name = "button4SubMR";
+            this.button4SubMR.Size = new System.Drawing.Size(266, 57);
+            this.button4SubMR.TabIndex = 0;
+            this.button4SubMR.Text = "Subjects";
+            this.button4SubMR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4SubMR.UseVisualStyleBackColor = false;
+            this.button4SubMR.Click += new System.EventHandler(this.button4SubMR_Click);
+            // 
+            // button5TagMR
+            // 
+            this.button5TagMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            this.button5TagMR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5TagMR.FlatAppearance.BorderSize = 0;
+            this.button5TagMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5TagMR.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5TagMR.ForeColor = System.Drawing.Color.White;
+            this.button5TagMR.Location = new System.Drawing.Point(0, 59);
+            this.button5TagMR.Name = "button5TagMR";
+            this.button5TagMR.Size = new System.Drawing.Size(266, 57);
+            this.button5TagMR.TabIndex = 1;
+            this.button5TagMR.Text = "Tag";
+            this.button5TagMR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5TagMR.UseVisualStyleBackColor = false;
+            this.button5TagMR.Click += new System.EventHandler(this.button5TagMR_Click);
+            // 
+            // button6LecMR
+            // 
+            this.button6LecMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            this.button6LecMR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6LecMR.FlatAppearance.BorderSize = 0;
+            this.button6LecMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6LecMR.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6LecMR.ForeColor = System.Drawing.Color.White;
+            this.button6LecMR.Location = new System.Drawing.Point(0, 115);
+            this.button6LecMR.Name = "button6LecMR";
+            this.button6LecMR.Size = new System.Drawing.Size(266, 57);
+            this.button6LecMR.TabIndex = 2;
+            this.button6LecMR.Text = "Lecturer";
+            this.button6LecMR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6LecMR.UseVisualStyleBackColor = false;
+            this.button6LecMR.Click += new System.EventHandler(this.button6LecMR_Click);
+            // 
+            // button7grpMR
+            // 
+            this.button7grpMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            this.button7grpMR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7grpMR.FlatAppearance.BorderSize = 0;
+            this.button7grpMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7grpMR.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7grpMR.ForeColor = System.Drawing.Color.White;
+            this.button7grpMR.Location = new System.Drawing.Point(0, 170);
+            this.button7grpMR.Name = "button7grpMR";
+            this.button7grpMR.Size = new System.Drawing.Size(266, 57);
+            this.button7grpMR.TabIndex = 3;
+            this.button7grpMR.Text = "Group";
+            this.button7grpMR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7grpMR.UseVisualStyleBackColor = false;
+            this.button7grpMR.Click += new System.EventHandler(this.button7grpMR_Click);
+            // 
+            // button8sessMR
+            // 
+            this.button8sessMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            this.button8sessMR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8sessMR.FlatAppearance.BorderSize = 0;
+            this.button8sessMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8sessMR.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8sessMR.ForeColor = System.Drawing.Color.White;
+            this.button8sessMR.Location = new System.Drawing.Point(0, 222);
+            this.button8sessMR.Name = "button8sessMR";
+            this.button8sessMR.Size = new System.Drawing.Size(266, 57);
+            this.button8sessMR.TabIndex = 4;
+            this.button8sessMR.Text = "Sessions";
+            this.button8sessMR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8sessMR.UseVisualStyleBackColor = false;
+            this.button8sessMR.Click += new System.EventHandler(this.button8sessMR_Click);
+            // 
+            // button9TnSubMR
+            // 
+            this.button9TnSubMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            this.button9TnSubMR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9TnSubMR.FlatAppearance.BorderSize = 0;
+            this.button9TnSubMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9TnSubMR.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9TnSubMR.ForeColor = System.Drawing.Color.White;
+            this.button9TnSubMR.Location = new System.Drawing.Point(0, 274);
+            this.button9TnSubMR.Name = "button9TnSubMR";
+            this.button9TnSubMR.Size = new System.Drawing.Size(266, 57);
+            this.button9TnSubMR.TabIndex = 5;
+            this.button9TnSubMR.Text = "Tag and Subject";
+            this.button9TnSubMR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9TnSubMR.UseVisualStyleBackColor = false;
+            this.button9TnSubMR.Click += new System.EventHandler(this.button9TnSubMR_Click);
             // 
             // AddLocation
             // 
@@ -264,6 +414,7 @@ namespace ITPM_Location
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelExampleRoomNameAL);
             this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.labelBuildingName);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.labelRoomType);
             this.Controls.Add(this.radioButtonLabRoomType);
@@ -274,13 +425,14 @@ namespace ITPM_Location
             this.Controls.Add(this.labelRoomName);
             this.Controls.Add(this.textBoxBuildingName);
             this.Controls.Add(this.labelBuildindName1);
-            this.Controls.Add(this.labelBuildingName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddLocation";
             this.Text = "Add Location";
             this.Load += new System.EventHandler(this.AddLocation_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,6 +457,14 @@ namespace ITPM_Location
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1MainHeader;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button9TnSubMR;
+        private System.Windows.Forms.Button button8sessMR;
+        private System.Windows.Forms.Button button7grpMR;
+        private System.Windows.Forms.Button button6LecMR;
+        private System.Windows.Forms.Button button5TagMR;
+        private System.Windows.Forms.Button button4SubMR;
     }
 }
 

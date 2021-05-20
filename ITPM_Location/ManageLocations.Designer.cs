@@ -47,6 +47,7 @@ namespace ITPM_Location
             this.textBoxID_ML = new System.Windows.Forms.TextBox();
             this.searchML = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@ namespace ITPM_Location
             // 
             this.labelBuildingNameManageLocations.AutoSize = true;
             this.labelBuildingNameManageLocations.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.labelBuildingNameManageLocations.Location = new System.Drawing.Point(110, 476);
+            this.labelBuildingNameManageLocations.Location = new System.Drawing.Point(102, 453);
             this.labelBuildingNameManageLocations.Name = "labelBuildingNameManageLocations";
             this.labelBuildingNameManageLocations.Size = new System.Drawing.Size(157, 24);
             this.labelBuildingNameManageLocations.TabIndex = 1;
@@ -74,7 +75,7 @@ namespace ITPM_Location
             // 
             this.labelCapacity.AutoSize = true;
             this.labelCapacity.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.labelCapacity.Location = new System.Drawing.Point(110, 667);
+            this.labelCapacity.Location = new System.Drawing.Point(102, 644);
             this.labelCapacity.Name = "labelCapacity";
             this.labelCapacity.Size = new System.Drawing.Size(98, 24);
             this.labelCapacity.TabIndex = 6;
@@ -84,7 +85,7 @@ namespace ITPM_Location
             // 
             this.labelRoomType.AutoSize = true;
             this.labelRoomType.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.labelRoomType.Location = new System.Drawing.Point(110, 606);
+            this.labelRoomType.Location = new System.Drawing.Point(102, 583);
             this.labelRoomType.Name = "labelRoomType";
             this.labelRoomType.Size = new System.Drawing.Size(123, 24);
             this.labelRoomType.TabIndex = 7;
@@ -94,7 +95,7 @@ namespace ITPM_Location
             // 
             this.labelRoomName.AutoSize = true;
             this.labelRoomName.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.labelRoomName.Location = new System.Drawing.Point(110, 541);
+            this.labelRoomName.Location = new System.Drawing.Point(102, 518);
             this.labelRoomName.Name = "labelRoomName";
             this.labelRoomName.Size = new System.Drawing.Size(137, 24);
             this.labelRoomName.TabIndex = 8;
@@ -104,7 +105,7 @@ namespace ITPM_Location
             // textBoxBuildingNameML
             // 
             this.textBoxBuildingNameML.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.textBoxBuildingNameML.Location = new System.Drawing.Point(337, 470);
+            this.textBoxBuildingNameML.Location = new System.Drawing.Point(329, 447);
             this.textBoxBuildingNameML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxBuildingNameML.Multiline = true;
             this.textBoxBuildingNameML.Name = "textBoxBuildingNameML";
@@ -115,7 +116,7 @@ namespace ITPM_Location
             // textBoxCapacityML
             // 
             this.textBoxCapacityML.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.textBoxCapacityML.Location = new System.Drawing.Point(337, 661);
+            this.textBoxCapacityML.Location = new System.Drawing.Point(329, 638);
             this.textBoxCapacityML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCapacityML.Multiline = true;
             this.textBoxCapacityML.Name = "textBoxCapacityML";
@@ -125,7 +126,7 @@ namespace ITPM_Location
             // textBoxRoomNameML
             // 
             this.textBoxRoomNameML.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.textBoxRoomNameML.Location = new System.Drawing.Point(337, 535);
+            this.textBoxRoomNameML.Location = new System.Drawing.Point(329, 512);
             this.textBoxRoomNameML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRoomNameML.Multiline = true;
             this.textBoxRoomNameML.Name = "textBoxRoomNameML";
@@ -138,10 +139,10 @@ namespace ITPM_Location
             this.buttonMLupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMLupdate.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.buttonMLupdate.ForeColor = System.Drawing.Color.White;
-            this.buttonMLupdate.Location = new System.Drawing.Point(834, 117);
+            this.buttonMLupdate.Location = new System.Drawing.Point(836, 135);
             this.buttonMLupdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMLupdate.Name = "buttonMLupdate";
-            this.buttonMLupdate.Size = new System.Drawing.Size(163, 38);
+            this.buttonMLupdate.Size = new System.Drawing.Size(210, 55);
             this.buttonMLupdate.TabIndex = 13;
             this.buttonMLupdate.Text = "Update";
             this.buttonMLupdate.UseVisualStyleBackColor = false;
@@ -153,10 +154,10 @@ namespace ITPM_Location
             this.buttonMLdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMLdelete.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.buttonMLdelete.ForeColor = System.Drawing.Color.White;
-            this.buttonMLdelete.Location = new System.Drawing.Point(834, 212);
+            this.buttonMLdelete.Location = new System.Drawing.Point(836, 242);
             this.buttonMLdelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMLdelete.Name = "buttonMLdelete";
-            this.buttonMLdelete.Size = new System.Drawing.Size(163, 38);
+            this.buttonMLdelete.Size = new System.Drawing.Size(210, 55);
             this.buttonMLdelete.TabIndex = 14;
             this.buttonMLdelete.Text = "Delete";
             this.buttonMLdelete.UseVisualStyleBackColor = false;
@@ -169,10 +170,10 @@ namespace ITPM_Location
             this.buttonMLclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMLclear.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.buttonMLclear.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.buttonMLclear.Location = new System.Drawing.Point(834, 316);
+            this.buttonMLclear.Location = new System.Drawing.Point(836, 347);
             this.buttonMLclear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMLclear.Name = "buttonMLclear";
-            this.buttonMLclear.Size = new System.Drawing.Size(163, 38);
+            this.buttonMLclear.Size = new System.Drawing.Size(210, 55);
             this.buttonMLclear.TabIndex = 15;
             this.buttonMLclear.Text = "Clear";
             this.buttonMLclear.UseVisualStyleBackColor = false;
@@ -181,7 +182,7 @@ namespace ITPM_Location
             // ML_RoomType_LecHall
             // 
             this.ML_RoomType_LecHall.AutoSize = true;
-            this.ML_RoomType_LecHall.Location = new System.Drawing.Point(337, 608);
+            this.ML_RoomType_LecHall.Location = new System.Drawing.Point(329, 585);
             this.ML_RoomType_LecHall.Name = "ML_RoomType_LecHall";
             this.ML_RoomType_LecHall.Size = new System.Drawing.Size(105, 21);
             this.ML_RoomType_LecHall.TabIndex = 17;
@@ -193,7 +194,7 @@ namespace ITPM_Location
             // ML_RoomType_lab
             // 
             this.ML_RoomType_lab.AutoSize = true;
-            this.ML_RoomType_lab.Location = new System.Drawing.Point(651, 608);
+            this.ML_RoomType_lab.Location = new System.Drawing.Point(643, 585);
             this.ML_RoomType_lab.Name = "ML_RoomType_lab";
             this.ML_RoomType_lab.Size = new System.Drawing.Size(98, 21);
             this.ML_RoomType_lab.TabIndex = 18;
@@ -205,20 +206,19 @@ namespace ITPM_Location
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(64, 135);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(743, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 267);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // textBoxID_ML
             // 
-            this.textBoxID_ML.Location = new System.Drawing.Point(337, 433);
+            this.textBoxID_ML.Location = new System.Drawing.Point(957, 518);
             this.textBoxID_ML.Name = "textBoxID_ML";
             this.textBoxID_ML.ReadOnly = true;
             this.textBoxID_ML.Size = new System.Drawing.Size(100, 22);
@@ -230,9 +230,10 @@ namespace ITPM_Location
             // 
             this.searchML.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchML.ForeColor = System.Drawing.Color.DarkGray;
-            this.searchML.Location = new System.Drawing.Point(834, 20);
+            this.searchML.Location = new System.Drawing.Point(515, 89);
+            this.searchML.Multiline = true;
             this.searchML.Name = "searchML";
-            this.searchML.Size = new System.Drawing.Size(240, 23);
+            this.searchML.Size = new System.Drawing.Size(292, 27);
             this.searchML.TabIndex = 21;
             this.searchML.Text = "Search using Room Name";
             this.searchML.MouseClick += new System.Windows.Forms.MouseEventHandler(this.searchML_MouseClick_1);
@@ -244,12 +245,23 @@ namespace ITPM_Location
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(266, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 20);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Search with Room Name";
+            // 
             // ManageLocations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1086, 733);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.searchML);
             this.Controls.Add(this.textBoxID_ML);
             this.Controls.Add(this.dataGridView1);
@@ -296,5 +308,6 @@ namespace ITPM_Location
         private System.Windows.Forms.TextBox textBoxID_ML;
         public System.Windows.Forms.TextBox searchML;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label1;
     }
 }

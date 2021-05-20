@@ -159,15 +159,11 @@ namespace ITPM_Location
 
         private void searchML_MouseClick(object sender, MouseEventArgs e)
         {
-            
+           
         }
 
-        /*private void searchML_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = c.Search();
-            dataGridView1.DataSource = dt;
-        }*/
-
+        
+       
         private void button1_Click(object sender, EventArgs e)
         {
             
