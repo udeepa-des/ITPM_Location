@@ -32,7 +32,8 @@ namespace ITPM_Location.LocationClasses
         public string LTS_Subject { get; set; }
         public string LTS_RoomName { get; set; }
         public string LCS_RoomName { get; set; }
-        public string LCS_Session1 { get; set; }
+        public string LCS_ConSession { get; set; }
+
 
         //StatChart Table
         //public int Lab { get; set; }
@@ -911,7 +912,7 @@ namespace ITPM_Location.LocationClasses
             try
             {
                 //Step 2: Writing sql query
-                string sql = "SELECT * FROM Session";
+                string sql = "SELECT * FROM Manage_Session_Table";
                 //Creating cmd using sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //Creating SQL DataAdapter using cmd
@@ -940,13 +941,15 @@ namespace ITPM_Location.LocationClasses
             try
             {
                 //Step 2: Create a Sql query to insert data
-                string sql = "INSERT INTO Location_ConsecutiveSessions(RoomName, Session1, Session2, Session1_Tag, Session2_Tag) VALUES (@RoomName, @Session1, '', '', '')";
+                string sql = "INSERT INTO Location_ConsecutiveSessions(RoomName, ConSession) VALUES (@RoomName, @ConSession)";
 
                 //Creating SQL commandusing sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //Create Parameter to add data
                 cmd.Parameters.AddWithValue("@RoomName", c.LCS_RoomName);
-                cmd.Parameters.AddWithValue("@Session1", c.LCS_Session1);
+                cmd.Parameters.AddWithValue("@ConSession", c.LCS_ConSession);
+                
+                
 
                 //Open the connection
                 conn.Open();
@@ -972,5 +975,7 @@ namespace ITPM_Location.LocationClasses
             }
             return isSuccess;
         }
+
+       
     }
 }

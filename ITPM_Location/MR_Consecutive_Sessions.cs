@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ITPM_Location
 {
@@ -26,7 +28,20 @@ namespace ITPM_Location
             DataTable dt = c.Select_consecutive_sessions();
             dataGridView1CS.DataSource = dt;
             dataGridView1Con.DataSource = dt;
+
+            DataGridViewCheckBoxColumn chckbox = new DataGridViewCheckBoxColumn();
+            chckbox.HeaderText = "";
+            chckbox.Width = 30;
+            chckbox.Name = "SelectSession";
+            dataGridView1CS.Columns.Insert(0, chckbox);
+
+            DataGridViewCheckBoxColumn chckboxCon = new DataGridViewCheckBoxColumn();
+            chckboxCon.HeaderText = "";
+            chckboxCon.Width = 30;
+            chckboxCon.Name = "SelectCon";
+            dataGridView1Con.Columns.Insert(0, chckboxCon);
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -53,7 +68,7 @@ namespace ITPM_Location
         private void dataGridView1CS_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            textBoxHidden_CS.Text = dataGridView1CS.Rows[rowIndex].Cells[0].Value.ToString();
+            textBoxHidden_CS.Text = dataGridView1CS.Rows[rowIndex].Cells[1].Value.ToString();
            
         }
 
@@ -93,6 +108,42 @@ namespace ITPM_Location
             sendtextCon = textBoxHiddenCon.Text;
             MR_Add_Consecutive_Sessions sessionCon = new MR_Add_Consecutive_Sessions();
             sessionCon.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string myconnstring = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            SqlConnection conn = new SqlConnection(myconnstring);
+
+            foreach (DataGridViewRow dr in dataGridView1Con.Rows)
+            {
+                bool selected = Convert.ToBoolean(dr.Cells["SelectCon"].Value);
+                if (selected)
+                {
+                   textBoxHiddenCon.AppendText("Tag: " + dr.Cells[4].Value.ToString() + "  " + "Subject Code: " + dr.Cells[7].Value.ToString() + "\r\n");
+
+                    /*string sql = "INSERT INTO session_test(Lecturer_Name1, Lecturer_Name2, Tag, Group_ID, Subject_Name, Subject_code, No_Of_Students, Duration) VALUES (@LecName1, @LecName2, @tag, @gID, @sName, @sCode, @NoStudents, @duration)";
+
+                    //Creating SQL commandusing sql and conn
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    //Create Parameter to add data
+                    cmd.Parameters.AddWithValue("@LecName1", dr.Cells[2].Value);
+                    cmd.Parameters.AddWithValue("@LecName2", dr.Cells[3].Value);
+                    cmd.Parameters.AddWithValue("@tag", dr.Cells[4].Value);
+                    cmd.Parameters.AddWithValue("@gID", dr.Cells[5].Value);
+                    cmd.Parameters.AddWithValue("@sName", dr.Cells[6].Value);
+                    cmd.Parameters.AddWithValue("@sCode", dr.Cells[7].Value);
+                    cmd.Parameters.AddWithValue("@NoStudents", dr.Cells[8].Value);
+                    cmd.Parameters.AddWithValue("@duration", dr.Cells[8].Value);
+
+                    //Open the connection
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    */
+                }
+                    
+            }
         }
     }
 }

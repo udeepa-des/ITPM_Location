@@ -28,7 +28,7 @@ namespace ITPM_Location
             {
                 comboBox1addSession.Text = MR_Consecutive_Sessions.sendtextCon;
                 comboBox1addSession.Items.Add(MR_Consecutive_Sessions.sendtextCon);
-                textBox1addSession.AppendText("\t" + MR_Consecutive_Sessions.sendtextCon + "\t");
+                textBox1addSession.AppendText(MR_Consecutive_Sessions.sendtextCon);
             }
             else
             {
@@ -51,7 +51,7 @@ namespace ITPM_Location
 
         private void comboBox1addSession_SelectedIndexChanged(object sender, EventArgs e)
         {
-           textBox1addSession.AppendText("\t" + comboBox1addSession.SelectedItem + "\t");
+           textBox1addSession.AppendText(comboBox1addSession.SelectedItem + " ");
         }
 
         private void comboBox2addSession_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace ITPM_Location
             adapter.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                textBox1addSession.AppendText("\t" + dr["RoomName"].ToString() + "\t");
+                textBox1addSession.AppendText("\r\nRoom Name: " + dr["RoomName"].ToString() + "\t");
             }
         }
 
@@ -86,7 +86,7 @@ namespace ITPM_Location
         private void button2SubmitAddSession_Click(object sender, EventArgs e)
         {
             //Get the values from the input fields
-            c.LCS_Session1 = comboBox1addSession.Text;
+            c.LCS_ConSession = comboBox1addSession.Text;
             c.LCS_RoomName = comboBox2addSession.Text;
 
             //inserting data into db using SQL class file

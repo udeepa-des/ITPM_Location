@@ -27,7 +27,7 @@ namespace ITPM_Location
             DataTable dt = c.comboBoxLecturer();
             foreach (DataRow dr in dt.Rows)
             {
-                comboBox1Lecturer.Items.Add(dr["Lecturer_Name"].ToString());
+                comboBox1Lecturer.Items.Add(dr["Lecturer_Name"].ToString() + " " );
             }
 
             DataTable dtr = c.comboBoxRoom();
