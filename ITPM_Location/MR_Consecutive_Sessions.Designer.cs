@@ -39,6 +39,7 @@ namespace ITPM_Location
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ConsecutivePage = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@ namespace ITPM_Location
             this.button1RefreshCon = new System.Windows.Forms.Button();
             this.textBoxHiddenCon = new System.Windows.Forms.TextBox();
             this.button3AddRoomCon = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1CS)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Sessions.SuspendLayout();
@@ -73,7 +73,7 @@ namespace ITPM_Location
             this.buttonAdd_Room.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd_Room.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.buttonAdd_Room.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd_Room.Location = new System.Drawing.Point(207, 526);
+            this.buttonAdd_Room.Location = new System.Drawing.Point(213, 577);
             this.buttonAdd_Room.Name = "buttonAdd_Room";
             this.buttonAdd_Room.Size = new System.Drawing.Size(200, 60);
             this.buttonAdd_Room.TabIndex = 1;
@@ -87,7 +87,7 @@ namespace ITPM_Location
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Montserrat", 10.8F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(613, 526);
+            this.button2.Location = new System.Drawing.Point(609, 577);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 60);
             this.button2.TabIndex = 2;
@@ -98,9 +98,10 @@ namespace ITPM_Location
             // textBoxHidden_CS
             // 
             this.textBoxHidden_CS.Enabled = false;
-            this.textBoxHidden_CS.Location = new System.Drawing.Point(953, 412);
+            this.textBoxHidden_CS.Location = new System.Drawing.Point(31, 441);
+            this.textBoxHidden_CS.Multiline = true;
             this.textBoxHidden_CS.Name = "textBoxHidden_CS";
-            this.textBoxHidden_CS.Size = new System.Drawing.Size(71, 29);
+            this.textBoxHidden_CS.Size = new System.Drawing.Size(993, 114);
             this.textBoxHidden_CS.TabIndex = 3;
             // 
             // tabControl1
@@ -135,11 +136,11 @@ namespace ITPM_Location
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(374, 418);
+            this.label6.Location = new System.Drawing.Point(27, 399);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(395, 23);
+            this.label6.Size = new System.Drawing.Size(580, 23);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Selected session\'s ID will be shown here";
+            this.label6.Text = "Tag and Subject code of the selected row will appear below";
             // 
             // label5
             // 
@@ -180,6 +181,16 @@ namespace ITPM_Location
             this.ConsecutivePage.UseVisualStyleBackColor = true;
             this.ConsecutivePage.Click += new System.EventHandler(this.ConsecutivePage_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(403, 393);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 31);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Click Me..";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -192,13 +203,12 @@ namespace ITPM_Location
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 69);
+            this.label2.Location = new System.Drawing.Point(27, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(920, 23);
+            this.label2.Size = new System.Drawing.Size(860, 46);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Select a session from the table (click the arrow head) to add a room to that cons" +
-    "ecutive session";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Text = "Select sessions from the table (use checkboxes to choose multiple) to add a room " +
+    "to that\r\nconsecutive session";
             // 
             // label1
             // 
@@ -259,16 +269,6 @@ namespace ITPM_Location
             this.button3AddRoomCon.Text = "Add Room";
             this.button3AddRoomCon.UseVisualStyleBackColor = false;
             this.button3AddRoomCon.Click += new System.EventHandler(this.button3AddRoomCon_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(369, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 31);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Click Me..";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MR_Consecutive_Sessions
             // 

@@ -102,11 +102,11 @@ namespace ITPM_Location
             this.textBox1Session.BackColor = System.Drawing.Color.White;
             this.textBox1Session.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox1Session.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1Session.Location = new System.Drawing.Point(278, 314);
+            this.textBox1Session.Location = new System.Drawing.Point(305, 314);
             this.textBox1Session.Multiline = true;
             this.textBox1Session.Name = "textBox1Session";
             this.textBox1Session.ReadOnly = true;
-            this.textBox1Session.Size = new System.Drawing.Size(686, 169);
+            this.textBox1Session.Size = new System.Drawing.Size(659, 169);
             this.textBox1Session.TabIndex = 21;
             this.textBox1Session.TextChanged += new System.EventHandler(this.textBox1Session_TextChanged);
             // 
