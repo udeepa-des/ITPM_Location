@@ -33,7 +33,8 @@ namespace ITPM_Location
             DataTable dtr = c.comboBoxRoom();
             foreach (DataRow dr in dtr.Rows)
             {
-                comboBox2Tag.Items.Add(dr["RoomName"].ToString());
+                comboBox2Tag.Items.Add(dr["RoomName"].ToString() + " - " + dr["RoomType"].ToString());
+                
             }
         }
 

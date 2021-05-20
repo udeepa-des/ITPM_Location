@@ -507,7 +507,7 @@ namespace ITPM_Location.LocationClasses
             try
             {
                 //Step 2: Writing sql query
-                string sql = "SELECT RoomName FROM Add_Location";
+                string sql = "SELECT RoomName, RoomType FROM Add_Location";
                 //Creating cmd using sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //Creating SQL DataAdapter using cmd
@@ -525,7 +525,6 @@ namespace ITPM_Location.LocationClasses
             }
             return dt;
         }
-
 
         public bool InsertToLocation_Lecturers(SQL c)
         {
@@ -725,7 +724,7 @@ namespace ITPM_Location.LocationClasses
             try
             {
                 //Step 2: Writing sql query
-                string sql = "SELECT Tag FROM Tag";
+                string sql = "SELECT Tag FROM Tag order by Tag DESC";
                 //Creating cmd using sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //Creating SQL DataAdapter using cmd
