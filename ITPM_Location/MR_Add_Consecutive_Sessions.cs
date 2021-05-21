@@ -1,15 +1,9 @@
 ﻿using ITPM_Location.LocationClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ITPM_Location
 {
@@ -63,8 +57,10 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT RoomName FROM Add_Location where RoomName='" + comboBox2addSession.SelectedItem.ToString() + "'";
+            
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+            
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();

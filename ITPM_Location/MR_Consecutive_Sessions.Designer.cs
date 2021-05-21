@@ -40,7 +40,6 @@ namespace ITPM_Location
             this.label4 = new System.Windows.Forms.Label();
             this.ConsecutivePage = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1Con = new System.Windows.Forms.DataGridView();
@@ -165,7 +164,6 @@ namespace ITPM_Location
             // ConsecutivePage
             // 
             this.ConsecutivePage.Controls.Add(this.button1);
-            this.ConsecutivePage.Controls.Add(this.label3);
             this.ConsecutivePage.Controls.Add(this.label2);
             this.ConsecutivePage.Controls.Add(this.label1);
             this.ConsecutivePage.Controls.Add(this.dataGridView1Con);
@@ -183,22 +181,19 @@ namespace ITPM_Location
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(403, 393);
+            this.button1.BackColor = System.Drawing.Color.DarkViolet;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(381, 389);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 31);
+            this.button1.Size = new System.Drawing.Size(268, 35);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Click Me..";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Show selected sessions";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 397);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(326, 23);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Click here to see selected details";
             // 
             // label2
             // 
@@ -305,7 +300,6 @@ namespace ITPM_Location
         private System.Windows.Forms.Button button3AddRoomCon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

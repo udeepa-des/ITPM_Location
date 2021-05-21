@@ -1,15 +1,9 @@
 ﻿using ITPM_Location.LocationClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ITPM_Location
 {
@@ -23,6 +17,7 @@ namespace ITPM_Location
 
         private void MR_Group_Load(object sender, EventArgs e)
         {
+            //load data to the combobox
             DataTable dt = c.comboBoxGroup();
             foreach (DataRow dr in dt.Rows)
             {
@@ -46,13 +41,16 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT groupID FROM student_groups where groupID='" + comboBox1Group.SelectedItem.ToString() + "'";
+           
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+           
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
+           
             foreach (DataRow dr in dt.Rows)
             {
                 textBox1Group.AppendText("\t" + dr["groupID"].ToString() + "\t");
@@ -69,8 +67,10 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT RoomName FROM Add_Location where RoomName='" + comboBox2Group.SelectedItem.ToString() + "'";
+            
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();

@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITPM_Location.LocationClasses
 {
 
     class SQL
     {
-        
+        //getters and setters
         public int ID { get; set; }
         public string BName { get; set; }
         public string RName { get; set; }
@@ -33,11 +29,6 @@ namespace ITPM_Location.LocationClasses
         public string LTS_RoomName { get; set; }
         public string LCS_RoomName { get; set; }
         public string LCS_ConSession { get; set; }
-
-
-        //StatChart Table
-        //public int Lab { get; set; }
-        //public int Lec { get; set; }
 
 
         static string myconnstring = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
@@ -85,6 +76,7 @@ namespace ITPM_Location.LocationClasses
 
                 //Creating SQL commandusing sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                
                 //Create Parameter to add data
                 cmd.Parameters.AddWithValue("@BuildingName", c.BName);
                 cmd.Parameters.AddWithValue("@RoomName", c.RName);
@@ -159,6 +151,7 @@ namespace ITPM_Location.LocationClasses
             return isSuccess;
         }
 
+
         //method to delete data from DB
         public bool Delete(SQL c)
         {
@@ -200,6 +193,7 @@ namespace ITPM_Location.LocationClasses
             }
             return isSuccess;
         }
+
 
         public int LabForChart()
         {
@@ -323,6 +317,7 @@ namespace ITPM_Location.LocationClasses
             return count;
         }
 
+        /*
         public int GetNoOfRowsOfLab()
         {
             //Step 1: DB connection
@@ -354,7 +349,9 @@ namespace ITPM_Location.LocationClasses
             conn.Close();
 
             return count;
-        }
+        }*/
+
+
         //get the latest lecturer for statistics
         public string LatestLecturer()
         {
@@ -435,6 +432,7 @@ namespace ITPM_Location.LocationClasses
 
             return count;
         }
+
         //for the number of Lecturers
         public int NumOfLecturers()
         {
@@ -569,8 +567,8 @@ namespace ITPM_Location.LocationClasses
             }
             return isSuccess;
         }
-
         //MR_Lecturers code end here
+
 
         //MR_Subject code starts here
         public DataTable comboBoxSubject()
@@ -716,6 +714,7 @@ namespace ITPM_Location.LocationClasses
             return isSuccess;
         }
 
+
         //Code for Tag starts here
         public DataTable comboBoxTag()
         {
@@ -725,7 +724,7 @@ namespace ITPM_Location.LocationClasses
             try
             {
                 //Step 2: Writing sql query
-                string sql = "SELECT Tag FROM Tag order by Tag DESC";
+                string sql = "SELECT tagCode FROM tags order by tagCode DESC";
                 //Creating cmd using sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //Creating SQL DataAdapter using cmd
@@ -786,6 +785,7 @@ namespace ITPM_Location.LocationClasses
             }
             return isSuccess;
         }
+
 
         //Session code starts here
         public DataTable comboBoxSession()
@@ -858,6 +858,7 @@ namespace ITPM_Location.LocationClasses
             return isSuccess;
         }
 
+        //Tag n Sub code starts here
         public bool InsertToLocation_Tag_n_Sub(SQL c)
         {
             //Creating a default return type and setting its value to false
@@ -949,8 +950,6 @@ namespace ITPM_Location.LocationClasses
                 cmd.Parameters.AddWithValue("@RoomName", c.LCS_RoomName);
                 cmd.Parameters.AddWithValue("@ConSession", c.LCS_ConSession);
                 
-                
-
                 //Open the connection
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();

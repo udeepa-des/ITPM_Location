@@ -23,6 +23,7 @@ namespace ITPM_Location
 
         private void T_and_Sub_Load(object sender, EventArgs e)
         {
+            //load data to comboboxes
             DataTable dt = c.comboBoxTag();
             foreach (DataRow dr in dt.Rows)
             {
@@ -51,13 +52,16 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT Tag FROM Tag where Tag='" + comboBox1TagnSub.SelectedItem.ToString() + "'";
+            
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+            
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
+            
             foreach (DataRow dr in dt.Rows)
             {
                 textBox1TagnSub.AppendText("\t" + dr["Tag"].ToString() + "\t");
@@ -73,13 +77,16 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT Subject_Name FROM Subj_Details_Table where Subject_Name='" + comboBox3TagnSub.SelectedItem.ToString() + "'";
+            
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+            
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
+           
             foreach (DataRow dr in dt.Rows)
             {
                 textBox1TagnSub.AppendText("\t" + dr["Subject_Name"].ToString() + "\t");
@@ -96,13 +103,16 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT RoomName FROM Add_Location where RoomName='" + comboBox2TagnSub.SelectedItem.ToString() + "'";
+            
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+            
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
+            
             foreach (DataRow dr in dt.Rows)
             {
                 textBox1TagnSub.AppendText("\t" + dr["RoomName"].ToString() + "\t");

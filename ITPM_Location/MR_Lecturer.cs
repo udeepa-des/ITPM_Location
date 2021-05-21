@@ -1,15 +1,9 @@
 ﻿using ITPM_Location.LocationClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ITPM_Location
 {
@@ -24,6 +18,7 @@ namespace ITPM_Location
 
         private void MR_Lecturer_Load(object sender, EventArgs e)
         {
+            //load data to combo boxes
             DataTable dt = c.comboBoxLecturer();
             foreach (DataRow dr in dt.Rows)
             {
@@ -56,7 +51,7 @@ namespace ITPM_Location
                 adapter.Fill(dt);
                 foreach (DataRow dr in dt.Rows)
             {
-                textBox1Lecturer.AppendText("\t" + dr["Lecturer_Name"].ToString()+"\t");
+                textBox1Lecturer.AppendText("Lecturer Name: " + dr["Lecturer_Name"].ToString());
             }
         }
 
@@ -78,9 +73,8 @@ namespace ITPM_Location
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             foreach (DataRow dr in dt.Rows)
-            {
-                string newLine = Environment.NewLine;
-                textBox1Lecturer.AppendText("\t"+dr["RoomName"].ToString()+"\t");
+            {             
+                textBox1Lecturer.AppendText("\r\nRoomName: "+dr["RoomName"].ToString());
             }
         }
 

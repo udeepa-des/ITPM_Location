@@ -1,15 +1,7 @@
 ﻿using ITPM_Location.LocationClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace ITPM_Location
 {
@@ -17,7 +9,6 @@ namespace ITPM_Location
     public partial class MR_Consecutive_Sessions : Form
     {
         SQL c = new SQL();
-        MR_Session s = new MR_Session();
         public MR_Consecutive_Sessions()
         {
             InitializeComponent();
@@ -30,7 +21,6 @@ namespace ITPM_Location
             dataGridView1Con.DataSource = dt;
 
             //adding check boxes to consecutive sessions
-
             DataGridViewCheckBoxColumn chckboxCon = new DataGridViewCheckBoxColumn();
             chckboxCon.HeaderText = "";
             chckboxCon.Width = 30;
@@ -46,7 +36,7 @@ namespace ITPM_Location
             textBoxHidden_CS.Text = "";
         }
 
-        public static string sendtext = "";
+        public static string sendtext = "";//to send selected session details to the combobox
         public static bool success = false;
         private void buttonAdd_Room_Click(object sender, EventArgs e)
         {
@@ -62,6 +52,7 @@ namespace ITPM_Location
 
         }
 
+        //To select rows from datagridview of the seesion tab
         private void dataGridView1CS_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int rowIndex = e.RowIndex;
@@ -89,6 +80,7 @@ namespace ITPM_Location
 
         }
 
+        //refresh button of the consecutive
         private void button1RefreshCon_Click(object sender, EventArgs e)
         {
             DataTable dt = c.Select_consecutive_sessions();
@@ -98,16 +90,36 @@ namespace ITPM_Location
         }
 
 
-        public static string sendtextCon = "";
+        public static string sendtextCon = "";//to pass the values from this page textbox to addconsecutive page's combobox1
         public static bool successCon = false;
+
+        //add button consecutive
         private void button3AddRoomCon_Click(object sender, EventArgs e)
         {
+            if(clicked == false)//if the button is not clicked
+            {
+                foreach (DataGridViewRow dr in dataGridView1Con.Rows)
+                {
+                    bool selected = Convert.ToBoolean(dr.Cells["SelectCon"].Value);
+                    if (selected)
+                    {
+                        textBoxHiddenCon.AppendText("Tag: " + dr.Cells[4].Value.ToString() + ",  " + "Subject Code: " + dr.Cells[7].Value.ToString() + " |\r\n");
+
+                    }
+                }
+           
+
+            }
+            clicked = false;// make false because when we get back to the datagridview we need to start fresh
             successCon = true;
             sendtextCon = textBoxHiddenCon.Text;
             MR_Add_Consecutive_Sessions sessionCon = new MR_Add_Consecutive_Sessions();
             sessionCon.Show();
+           
         }
 
+        bool clicked = false;//To check if the button will clicked
+        //show details button
         private void button1_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow dr in dataGridView1Con.Rows)
@@ -115,12 +127,14 @@ namespace ITPM_Location
                 bool selected = Convert.ToBoolean(dr.Cells["SelectCon"].Value);
                 if (selected)
                 {
-                   textBoxHiddenCon.AppendText("Tag: " + dr.Cells[4].Value.ToString() + ",  " + "Subject Code: " + dr.Cells[7].Value.ToString() + " |\r\n");
-                                        
+
+                    textBoxHiddenCon.AppendText("Tag: " + dr.Cells[4].Value.ToString() + ",  " + "Subject Code: " + dr.Cells[7].Value.ToString() + " |\r\n");                                        
                 }
                     
             }
+            clicked = true;//true when the button is clicked
         }
+
 
         private void button3session_Click(object sender, EventArgs e)
         {

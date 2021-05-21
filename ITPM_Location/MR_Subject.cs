@@ -28,6 +28,7 @@ namespace ITPM_Location
 
         private void MR_Subject_Load(object sender, EventArgs e)
         {
+            //load data into comboBox 
             DataTable dt = c.comboBoxSubject();
             foreach (DataRow dr in dt.Rows)
             {
@@ -51,13 +52,16 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT Subject_Name FROM Subj_Details_Table where Subject_Name='" + comboBox1Subject.SelectedItem.ToString() + "'";
+            
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+            
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
+            
             foreach (DataRow dr in dt.Rows)
             {
                 textBox1Subject.AppendText("\t" + dr["Subject_Name"].ToString() + "\t");
@@ -74,13 +78,16 @@ namespace ITPM_Location
 
             //Step 2: Writing sql query
             string sql = "SELECT DISTINCT RoomName FROM Add_Location where RoomName='" + comboBox2Subject.SelectedItem.ToString() + "'";
+            
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
+            
             //Creating SQL DataAdapter using cmd
             //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
+           
             foreach (DataRow dr in dt.Rows)
             {
                 textBox1Subject.AppendText("\t" + dr["RoomName"].ToString() + "\t");

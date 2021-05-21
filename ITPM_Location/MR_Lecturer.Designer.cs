@@ -107,7 +107,6 @@ namespace ITPM_Location
             this.textBox1Lecturer.ReadOnly = true;
             this.textBox1Lecturer.Size = new System.Drawing.Size(695, 169);
             this.textBox1Lecturer.TabIndex = 12;
-            this.textBox1Lecturer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1Lecturer.TextChanged += new System.EventHandler(this.textBox1Lecturer_TextChanged);
             // 
             // comboBox2Lecturer

@@ -1,16 +1,9 @@
 ﻿using ITPM_Location.LocationClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
-using System.Drawing.Drawing2D;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ITPM_Location
 {
@@ -24,6 +17,7 @@ namespace ITPM_Location
 
         private void MR_Session_Load(object sender, EventArgs e)
         {
+            //get selected session details to the combobox
             if (MR_Consecutive_Sessions.success == true)
             {
                 comboBox1Session.Text = MR_Consecutive_Sessions.sendtext;

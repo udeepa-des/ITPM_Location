@@ -1,15 +1,9 @@
 ﻿using ITPM_Location.LocationClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ITPM_Location
 {
@@ -22,20 +16,23 @@ namespace ITPM_Location
             InitializeComponent();
         }
 
+       
         private void MR_Tag_Load(object sender, EventArgs e)
         {
+            //load data to comboboxes
             DataTable dt = c.comboBoxTag();
             foreach (DataRow dr in dt.Rows)
             {
-                comboBox1Tag.Items.Add(dr["Tag"].ToString());
+                comboBox1Tag.Items.Add(dr["tagCode"].ToString());
             }
 
             DataTable dtr = c.comboBoxRoom();
             foreach (DataRow dr in dtr.Rows)
             {
-                comboBox2Tag.Items.Add(dr["RoomName"].ToString() + " - " + dr["RoomType"].ToString());
+                 comboBox2Tag.Items.Add(dr["RoomName"].ToString() + " - " + dr["RoomType"].ToString());
                 
             }
+
         }
 
         private void comboBox1Tag_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,7 +43,7 @@ namespace ITPM_Location
             DataTable dt = new DataTable();
 
             //Step 2: Writing sql query
-            string sql = "SELECT DISTINCT Tag FROM Tag where Tag='" + comboBox1Tag.SelectedItem.ToString() + "'";
+            string sql = "SELECT DISTINCT tagCode FROM tags where tagCode='" + comboBox1Tag.SelectedItem.ToString() + "'";
             //Creating cmd using sql and conn
             SqlCommand cmd = new SqlCommand(sql, conn);
             //Creating SQL DataAdapter using cmd
@@ -56,7 +53,7 @@ namespace ITPM_Location
             adapter.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                textBox1Tag.AppendText("\t" + dr["Tag"].ToString() + "\t");
+                textBox1Tag.AppendText("TagCode: " + dr["tagCode"].ToString() + "\r\n");
             }
         }
 
@@ -79,10 +76,11 @@ namespace ITPM_Location
             adapter.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                textBox1Tag.AppendText("\t" + dr["RoomName"].ToString() + "\t");
+                textBox1Tag.AppendText("RoomName and RoomType: " + comboBox2Tag.Text.ToString());                
             }
         }
 
+        //clear button
         private void buttonClearTag_Click(object sender, EventArgs e)
         {
             comboBox1Tag.SelectedIndex = 0;
